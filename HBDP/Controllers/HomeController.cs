@@ -5,7 +5,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using HBDP.Models;
-
 namespace HBDP.Controllers
 {
 	public class HomeController : Controller
@@ -13,6 +12,10 @@ namespace HBDP.Controllers
 		public IActionResult Index()
 		{
 			return View();
+		}
+		public JsonResult Serialize(Input input)
+		{
+			return Json(input);
 		}
 		public IActionResult Output()
 		{

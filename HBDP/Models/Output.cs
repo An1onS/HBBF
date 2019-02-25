@@ -3,10 +3,55 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace HBDP.Models.Output
+namespace HBDP.Models
 {
-	public class FactorInfluence
+	public class Output
 	{
+		#region Income
+		public double O2_HeatCapacity { set; get; }
+		public double N2_HeatCapacity { set; get; }
+		public double H2O_HeatCapacity { set; get; }
+		public double CokeHeat { set; get; }
+		public double CokeHeatPercent { set; get; }
+		public double AirHeat { set; get; }
+		public double AirHeatPercent { set; get; }
+		public double GasHeat { set; get; }
+		public double GasHeatPercent { set; get; }
+		public double SlagHeat { set; get; }
+		public double SlagHeatPercent { set; get; }
+		public double Sum { set; get; }
+		public double SumPercent { set; get; }
+		#endregion
+		#region Withdrawal
+		public double CO_HeatCapacity { set; get; }
+		public double CO2_HeatCapacity { set; get; }
+		public double H2_HeatCapacity { set; get; }
+		public double W_H2O_HeatCapacity { set; get; }
+		public double W_N2_HeatCapacity { set; get; }
+		public double FeReduction { set; get; }
+		public double FeReductionPercent { set; get; }
+		public double ResidualsReduction { set; get; }
+		public double ResidualsReductionPercent { set; get; }
+		public double Desulfuration { set; get; }
+		public double DesulfurationPercent { set; get; }
+		public double Fe_H2_Reduction { set; get; }
+		public double Fe_H2_ReductionPercent { set; get; }
+		public double PigIronHeating { set; get; }
+		public double PigIronHeatingPercent { set; get; }
+		public double SlagHeating { set; get; }
+		public double SlagHeatingPercent { set; get; }
+		public double DegradingAirH20 { set; get; }
+		public double DegradingAirH20_Percent { set; get; }
+		public double DegradingStock { set; get; }
+		public double DegradingStockPercent { set; get; }
+		public double TopGas { set; get; }
+		public double TopGasPercent { set; get; }
+		public double Losses { set; get; }
+		public double LossesPercent { set; get; }
+		public double W_Sum { set; get; }
+		public double W_SumPercent { set; get; }
+		#endregion
+		#region Influence
 		/// <summary>
 		/// Приход тепла от горения кокса у фурм и горячего дутья за вычетом тепла,
 		/// уносимого колошниковым газом
@@ -78,11 +123,11 @@ namespace HBDP.Models.Output
 		/// <summary>
 		/// Экономия тепла при снижении выхода шлака на 10 кг
 		/// </summary>
-		public double SlagHeatEconomy { set; get;}
+		public double SlagHeatEconomy { set; get; }
 		/// <summary>
 		/// Экономия кокса при снижении выхода шлака на 10 кг
 		/// </summary>
-		public double SlagCokeEconomy { set; get;}
+		public double SlagCokeEconomy { set; get; }
 		#endregion
 		#region 7.Влияние тепловых потерь доменной печи на расход кокса
 		/// <summary>
@@ -93,6 +138,7 @@ namespace HBDP.Models.Output
 		/// Экономия кокса при снижении тепловых потерь печи на 1 %
 		/// </summary>
 		public double LossesCokeEconomy { set; get; }
+		#endregion
 		#endregion
 	}
 }
