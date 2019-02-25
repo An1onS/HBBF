@@ -1,0 +1,37 @@
+﻿@model HBDP.Models.Input.Slag
+
+<h4>Slag</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="_Slag">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Ratio" class="control-label"></label>
+                <input asp-for="Ratio" class="form-control" />
+                <span asp-validation-for="Ratio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sulfur" class="control-label"></label>
+                <input asp-for="Sulfur" class="form-control" />
+                <span asp-validation-for="Sulfur" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HeatCapacity" class="control-label"></label>
+                <input asp-for="HeatCapacity" class="form-control" />
+                <span asp-validation-for="HeatCapacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

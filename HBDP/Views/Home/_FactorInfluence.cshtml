@@ -1,0 +1,112 @@
+﻿@model HBDP.Models.Output.FactorInfluence
+
+<h4>FactorInfluence</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="_FactorInfluence">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Q" class="control-label"></label>
+                <input asp-for="Q" class="form-control" />
+                <span asp-validation-for="Q" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QtoC" class="control-label"></label>
+                <input asp-for="QtoC" class="form-control" />
+                <span asp-validation-for="QtoC" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CokeC" class="control-label"></label>
+                <input asp-for="CokeC" class="form-control" />
+                <span asp-validation-for="CokeC" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rd" class="control-label"></label>
+                <input asp-for="Rd" class="form-control" />
+                <span asp-validation-for="Rd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RdCoke" class="control-label"></label>
+                <input asp-for="RdCoke" class="form-control" />
+                <span asp-validation-for="RdCoke" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Limestone" class="control-label"></label>
+                <input asp-for="Limestone" class="form-control" />
+                <span asp-validation-for="Limestone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LimestoneCoke" class="control-label"></label>
+                <input asp-for="LimestoneCoke" class="form-control" />
+                <span asp-validation-for="LimestoneCoke" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LimestoneFull" class="control-label"></label>
+                <input asp-for="LimestoneFull" class="form-control" />
+                <span asp-validation-for="LimestoneFull" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AirBlasting" class="control-label"></label>
+                <input asp-for="AirBlasting" class="form-control" />
+                <span asp-validation-for="AirBlasting" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AirBlastingCoke" class="control-label"></label>
+                <input asp-for="AirBlastingCoke" class="form-control" />
+                <span asp-validation-for="AirBlastingCoke" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Conversion" class="control-label"></label>
+                <input asp-for="Conversion" class="form-control" />
+                <span asp-validation-for="Conversion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConversionCoke" class="control-label"></label>
+                <input asp-for="ConversionCoke" class="form-control" />
+                <span asp-validation-for="ConversionCoke" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dampness" class="control-label"></label>
+                <input asp-for="Dampness" class="form-control" />
+                <span asp-validation-for="Dampness" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DampnessCoke" class="control-label"></label>
+                <input asp-for="DampnessCoke" class="form-control" />
+                <span asp-validation-for="DampnessCoke" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SlagHeatEconomy" class="control-label"></label>
+                <input asp-for="SlagHeatEconomy" class="form-control" />
+                <span asp-validation-for="SlagHeatEconomy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SlagCokeEconomy" class="control-label"></label>
+                <input asp-for="SlagCokeEconomy" class="form-control" />
+                <span asp-validation-for="SlagCokeEconomy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LossesHeatEconomy" class="control-label"></label>
+                <input asp-for="LossesHeatEconomy" class="form-control" />
+                <span asp-validation-for="LossesHeatEconomy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LossesCokeEconomy" class="control-label"></label>
+                <input asp-for="LossesCokeEconomy" class="form-control" />
+                <span asp-validation-for="LossesCokeEconomy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
