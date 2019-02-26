@@ -1,5 +1,5 @@
 ﻿@model HBDP.Models.Input
-
+@System.Globalization.CultureInfo.CurrentUICulture
 @{
     ViewData["Title"] = "Исходные данные";
 }
@@ -12,217 +12,207 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <h3>Характеристики чугуна</h3>
             <div class="form-group">
-                <label asp-for="PigIronData[0]" class="control-label">asflkajs</label>
-                <input asp-for="PigIronData[0]" class="form-control" />
-                <span asp-validation-for="PigIronData[0]" class="text-danger"></span>
+                <label asp-for="PigIron.Si" class="control-label">Кремний</label>
+                <input asp-for="PigIron.Si" class="form-control" />
+                <span asp-validation-for="PigIron.Si" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Regime.StraightReduction" class="control-label">regime</label>
-                <input asp-for="Regime.StraightReduction" class="form-control" />
-                <span asp-validation-for="Regime.StraightReduction" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Si" class="control-label">Кремний</label>
-                <input asp-for="Si" class="form-control" />
-                <span asp-validation-for="Si" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Mn" class="control-label">Марганец</label>
-                <input asp-for="Mn" class="form-control" />
-                <span asp-validation-for="Mn" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="S" class="control-label">Сера</label>
-                <input asp-for="S" class="form-control" />
-                <span asp-validation-for="S" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="P" class="control-label">Фосфор</label>
-                <input asp-for="P" class="form-control" />
-                <span asp-validation-for="P" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Ti" class="control-label">Титан</label>
-                <input asp-for="Ti" class="form-control" />
-                <span asp-validation-for="Ti" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Cr" class="control-label">Хром</label>
-                <input asp-for="Cr" class="form-control" />
-                <span asp-validation-for="Cr" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="V" class="control-label">Ванадий</label>
-                <input asp-for="V" class="form-control" />
-                <span asp-validation-for="V" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="C" class="control-label">Углерод</label>
-                <input asp-for="C" class="form-control" />
-                <span asp-validation-for="C" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PigIron_Temperature" class="control-label">Температура чугуна</label>
-                <input asp-for="PigIron_Temperature" class="form-control" />
-                <span asp-validation-for="PigIron_Temperature" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PigIron_HeatCapacity" class="control-label">Теплоёмкость чугуна</label>
-                <input asp-for="PigIron_HeatCapacity" class="form-control" />
-                <span asp-validation-for="PigIron_HeatCapacity" class="text-danger"></span>
-            </div>
-            <h3>Режим</h3>
-            <div class="form-group">
-                <label asp-for="StraightReduction" class="control-label">Степень прямого восстановления</label>
-                <input asp-for="StraightReduction" class="form-control" />
-                <span asp-validation-for="StraightReduction" class="text-danger"></span>
-            </div>
-            <h3>Характеристики кокса</h3>
-            <div class="form-group">
-                <label asp-for="Coke_Consumption" class="control-label">Удельный расход кокса</label>
-                <input asp-for="Coke_Consumption" class="form-control" />
-                <span asp-validation-for="Coke_Consumption" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Coke_Ash" class="control-label">Зола</label>
-                <input asp-for="Coke_Ash" class="form-control" />
-                <span asp-validation-for="Coke_Ash" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Sulfur" class="control-label">Сера</label>
-                <input asp-for="Sulfur" class="form-control" />
-                <span asp-validation-for="Sulfur" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Volatiles" class="control-label">Летучие кокса</label>
-                <input asp-for="Volatiles" class="form-control" />
-                <span asp-validation-for="Volatiles" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Dampness" class="control-label">Влага кокса</label>
-                <input asp-for="Dampness" class="form-control" />
-                <span asp-validation-for="Dampness" class="text-danger"></span>
-            </div>
-            <h3>Параметры дутья</h3>
-            <div class="form-group">
-                <label asp-for="AirBlastingTemperature" class="control-label">Температура дутья</label>
-                <input asp-for="AirBlastingTemperature" class="form-control" />
-                <span asp-validation-for="AirBlastingTemperature" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AirBlastingDampness" class="control-label">Влажность дутья</label>
-                <input asp-for="AirBlastingDampness" class="form-control" />
-                <span asp-validation-for="AirBlastingDampness" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="OxygenPercent" class="control-label">Содержание кислорода</label>
-                <input asp-for="OxygenPercent" class="form-control" />
-                <span asp-validation-for="OxygenPercent" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AirBlastingConsumption" class="control-label">Удельный расход природного газа</label>
-                <input asp-for="AirBlastingConsumption" class="form-control" />
-                <span asp-validation-for="AirBlastingConsumption" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Methane" class="control-label">Процент метана</label>
-                <input asp-for="Methane" class="form-control" />
-                <span asp-validation-for="Methane" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Ethane" class="control-label">Процент этана</label>
-                <input asp-for="Ethane" class="form-control" />
-                <span asp-validation-for="Ethane" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CarbonDioxide" class="control-label">Процент углекислого газа</label>
-                <input asp-for="CarbonDioxide" class="form-control" />
-                <span asp-validation-for="CarbonDioxide" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Carbon" class="control-label">Содержание углерода в природном газе</label>
-                <input asp-for="Carbon" class="form-control" />
-                <span asp-validation-for="Carbon" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Hydrogen" class="control-label">Содержание водорода в природном газе</label>
-                <input asp-for="Hydrogen" class="form-control" />
-                <span asp-validation-for="Hydrogen" class="text-danger"></span>
-            </div>
-            <h3>Параметры известняка</h3>
-            <div class="form-group">
-                <label asp-for="LimestoneConsumption" class="control-label">Удельный расход известняка</label>
-                <input asp-for="LimestoneConsumption" class="form-control" />
-                <span asp-validation-for="LimestoneConsumption" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LimestoneDampness" class="control-label">Содержание влаги в известняке</label>
-                <input asp-for="LimestoneDampness" class="form-control" />
-                <span asp-validation-for="LimestoneDampness" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MassLose" class="control-label">Потеря массы при прокаливании</label>
-                <input asp-for="MassLose" class="form-control" />
-                <span asp-validation-for="MassLose" class="text-danger"></span>
-            </div>
-            <h3>Шлак</h3>
-            <div class="form-group">
-                <label asp-for="Ratio" class="control-label">Удельный выход шлака</label>
-                <input asp-for="Ratio" class="form-control" />
-                <span asp-validation-for="Ratio" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SlagSulfur" class="control-label">Содержание серы в шлаке</label>
-                <input asp-for="SlagSulfur" class="form-control" />
-                <span asp-validation-for="SlagSulfur" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SlagHeatCapacity" class="control-label">Теплоёмкость шлака</label>
-                <input asp-for="SlagHeatCapacity" class="form-control" />
-                <span asp-validation-for="SlagHeatCapacity" class="text-danger"></span>
-            </div>
-            <h3>Колошниковый газ</h3>
-            <div class="form-group">
-                <label asp-for="TopGasTemperature" class="control-label">Температура колошникового газа</label>
-                <input asp-for="TopGasTemperature" class="form-control" />
-                <span asp-validation-for="TopGasTemperature" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CO2" class="control-label">Содержание CO2</label>
-                <input asp-for="CO2" class="form-control" />
-                <span asp-validation-for="CO2" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CO" class="control-label">Содержание CO</label>
-                <input asp-for="CO" class="form-control" />
-                <span asp-validation-for="CO" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="H2" class="control-label">Содержание H2</label>
-                <input asp-for="H2" class="form-control" />
-                <span asp-validation-for="H2" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="N2" class="control-label">Содержание N2</label>
-                <input asp-for="N2" class="form-control" />
-                <span asp-validation-for="N2" class="text-danger"></span>
-            </div>
-            <h3>Характеристики ЖРМ</h3>
-            <div class="form-group">
-                <label asp-for="Consumption_IronMaterial" class="control-label">Удельный расход ЖРМ</label>
-                <input asp-for="Consumption_IronMaterial" class="form-control" />
-                <span asp-validation-for="Consumption_IronMaterial" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Consumption_IronAddings" class="control-label">Удельный расход металлодобавок</label>
-                <input asp-for="Consumption_IronAddings" class="form-control" />
-                <span asp-validation-for="Consumption_IronAddings" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IOMDampness" class="control-label">Содержание влаги в ЖРМ</label>
-                <input asp-for="IOMDampness" class="form-control" />
-                <span asp-validation-for="IOMDampness" class="text-danger"></span>
-            </div>
+            @*<div class="form-group">
+                    <label asp-for="Mn" class="control-label">Марганец</label>
+                    <input asp-for="Mn" class="form-control" />
+                    <span asp-validation-for="Mn" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="S" class="control-label">Сера</label>
+                    <input asp-for="S" class="form-control" />
+                    <span asp-validation-for="S" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="P" class="control-label">Фосфор</label>
+                    <input asp-for="P" class="form-control" />
+                    <span asp-validation-for="P" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Ti" class="control-label">Титан</label>
+                    <input asp-for="Ti" class="form-control" />
+                    <span asp-validation-for="Ti" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Cr" class="control-label">Хром</label>
+                    <input asp-for="Cr" class="form-control" />
+                    <span asp-validation-for="Cr" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="V" class="control-label">Ванадий</label>
+                    <input asp-for="V" class="form-control" />
+                    <span asp-validation-for="V" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="C" class="control-label">Углерод</label>
+                    <input asp-for="C" class="form-control" />
+                    <span asp-validation-for="C" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PigIron_Temperature" class="control-label">Температура чугуна</label>
+                    <input asp-for="PigIron_Temperature" class="form-control" />
+                    <span asp-validation-for="PigIron_Temperature" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PigIron_HeatCapacity" class="control-label">Теплоёмкость чугуна</label>
+                    <input asp-for="PigIron_HeatCapacity" class="form-control" />
+                    <span asp-validation-for="PigIron_HeatCapacity" class="text-danger"></span>
+                </div>
+                <h3>Режим</h3>
+                <div class="form-group">
+                    <label asp-for="StraightReduction" class="control-label">Степень прямого восстановления</label>
+                    <input asp-for="StraightReduction" class="form-control" />
+                    <span asp-validation-for="StraightReduction" class="text-danger"></span>
+                </div>
+                <h3>Характеристики кокса</h3>
+                <div class="form-group">
+                    <label asp-for="Coke_Consumption" class="control-label">Удельный расход кокса</label>
+                    <input asp-for="Coke_Consumption" class="form-control" />
+                    <span asp-validation-for="Coke_Consumption" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Coke_Ash" class="control-label">Зола</label>
+                    <input asp-for="Coke_Ash" class="form-control" />
+                    <span asp-validation-for="Coke_Ash" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Sulfur" class="control-label">Сера</label>
+                    <input asp-for="Sulfur" class="form-control" />
+                    <span asp-validation-for="Sulfur" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Volatiles" class="control-label">Летучие кокса</label>
+                    <input asp-for="Volatiles" class="form-control" />
+                    <span asp-validation-for="Volatiles" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Dampness" class="control-label">Влага кокса</label>
+                    <input asp-for="Dampness" class="form-control" />
+                    <span asp-validation-for="Dampness" class="text-danger"></span>
+                </div>
+                <h3>Параметры дутья</h3>
+                <div class="form-group">
+                    <label asp-for="AirBlastingTemperature" class="control-label">Температура дутья</label>
+                    <input asp-for="AirBlastingTemperature" class="form-control" />
+                    <span asp-validation-for="AirBlastingTemperature" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="AirBlastingDampness" class="control-label">Влажность дутья</label>
+                    <input asp-for="AirBlastingDampness" class="form-control" />
+                    <span asp-validation-for="AirBlastingDampness" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="OxygenPercent" class="control-label">Содержание кислорода</label>
+                    <input asp-for="OxygenPercent" class="form-control" />
+                    <span asp-validation-for="OxygenPercent" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="AirBlastingConsumption" class="control-label">Удельный расход природного газа</label>
+                    <input asp-for="AirBlastingConsumption" class="form-control" />
+                    <span asp-validation-for="AirBlastingConsumption" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Methane" class="control-label">Процент метана</label>
+                    <input asp-for="Methane" class="form-control" />
+                    <span asp-validation-for="Methane" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Ethane" class="control-label">Процент этана</label>
+                    <input asp-for="Ethane" class="form-control" />
+                    <span asp-validation-for="Ethane" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CarbonDioxide" class="control-label">Процент углекислого газа</label>
+                    <input asp-for="CarbonDioxide" class="form-control" />
+                    <span asp-validation-for="CarbonDioxide" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Carbon" class="control-label">Содержание углерода в природном газе</label>
+                    <input asp-for="Carbon" class="form-control" />
+                    <span asp-validation-for="Carbon" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Hydrogen" class="control-label">Содержание водорода в природном газе</label>
+                    <input asp-for="Hydrogen" class="form-control" />
+                    <span asp-validation-for="Hydrogen" class="text-danger"></span>
+                </div>
+                <h3>Параметры известняка</h3>
+                <div class="form-group">
+                    <label asp-for="LimestoneConsumption" class="control-label">Удельный расход известняка</label>
+                    <input asp-for="LimestoneConsumption" class="form-control" />
+                    <span asp-validation-for="LimestoneConsumption" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LimestoneDampness" class="control-label">Содержание влаги в известняке</label>
+                    <input asp-for="LimestoneDampness" class="form-control" />
+                    <span asp-validation-for="LimestoneDampness" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="MassLose" class="control-label">Потеря массы при прокаливании</label>
+                    <input asp-for="MassLose" class="form-control" />
+                    <span asp-validation-for="MassLose" class="text-danger"></span>
+                </div>
+                <h3>Шлак</h3>
+                <div class="form-group">
+                    <label asp-for="Ratio" class="control-label">Удельный выход шлака</label>
+                    <input asp-for="Ratio" class="form-control" />
+                    <span asp-validation-for="Ratio" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SlagSulfur" class="control-label">Содержание серы в шлаке</label>
+                    <input asp-for="SlagSulfur" class="form-control" />
+                    <span asp-validation-for="SlagSulfur" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SlagHeatCapacity" class="control-label">Теплоёмкость шлака</label>
+                    <input asp-for="SlagHeatCapacity" class="form-control" />
+                    <span asp-validation-for="SlagHeatCapacity" class="text-danger"></span>
+                </div>
+                <h3>Колошниковый газ</h3>
+                <div class="form-group">
+                    <label asp-for="TopGasTemperature" class="control-label">Температура колошникового газа</label>
+                    <input asp-for="TopGasTemperature" class="form-control" />
+                    <span asp-validation-for="TopGasTemperature" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CO2" class="control-label">Содержание CO2</label>
+                    <input asp-for="CO2" class="form-control" />
+                    <span asp-validation-for="CO2" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CO" class="control-label">Содержание CO</label>
+                    <input asp-for="CO" class="form-control" />
+                    <span asp-validation-for="CO" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="H2" class="control-label">Содержание H2</label>
+                    <input asp-for="H2" class="form-control" />
+                    <span asp-validation-for="H2" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="N2" class="control-label">Содержание N2</label>
+                    <input asp-for="N2" class="form-control" />
+                    <span asp-validation-for="N2" class="text-danger"></span>
+                </div>
+                <h3>Характеристики ЖРМ</h3>
+                <div class="form-group">
+                    <label asp-for="Consumption_IronMaterial" class="control-label">Удельный расход ЖРМ</label>
+                    <input asp-for="Consumption_IronMaterial" class="form-control" />
+                    <span asp-validation-for="Consumption_IronMaterial" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Consumption_IronAddings" class="control-label">Удельный расход металлодобавок</label>
+                    <input asp-for="Consumption_IronAddings" class="form-control" />
+                    <span asp-validation-for="Consumption_IronAddings" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="IOMDampness" class="control-label">Содержание влаги в ЖРМ</label>
+                    <input asp-for="IOMDampness" class="form-control" />
+                    <span asp-validation-for="IOMDampness" class="text-danger"></span>
+                </div>*@
             <div class="form-group">
                 <input type="submit" value="Сохранить" class="btn btn-default" />
             </div>

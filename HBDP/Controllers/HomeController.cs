@@ -87,78 +87,78 @@ namespace HBDP.Controllers
 		//{
 		//	return Json(input);
 		//}
-		
+
 		public IActionResult Output(Input input)
 		{
 			var root = hostingEnvironment.WebRootPath;
 			var fileName = "Тепловой баланс доменной печи.xlsx";
 			var fileinfo = new FileInfo(Path.Combine(root, fileName));
-			using (var package = new ExcelPackage(fileinfo))
-			{
-				var worksheet = package.Workbook.Worksheets["Исходные данные"];
-				// цикл - перебор и заполнение строк в .xlsx
-				var pigIronData = new double[10]
-				{
-					input.Si,
-					input.Mn,
-					input.S,
-					input.P,
-					input.Ti,
-					input.Cr,
-					input.V,
-					input.C,
-					input.PigIron_Temperature,
-					input.C
-				};
-				for (var row = 5; row < 15; row++)
-					worksheet.Cells[row, 3].Value = pigIronData[row - 5];
-				worksheet.Cells[16, 3].Value = input.StraightReduction;
-				var cokeData = new double[5]
-				{
-					input.Coke_Consumption,
-					input.Coke_Ash,
-					input.Sulfur,
-					input.Volatiles,
-					input.Dampness
-				}; //Характеристики кокса
-				for (var row = 18; row <23; row++)
-					worksheet.Cells[row, 3].Value = cokeData[row - 18];
-				var airBlastingData = new double[9]
-				{
-					input.PigIron_Temperature,
-					input.AirBlastingDampness,
-					input.OxygenPercent,
-					input.AirBlastingConsumption,
-					input.Methane,
-					input.Ethane,
-					input.CarbonDioxide,
-					input.Carbon,
-					input.Hydrogen
-				};
-				for (var row = 24; row < 33; row++)
-					worksheet.Cells[row, 3].Value = airBlastingData[row - 24];
-				worksheet.Cells[34, 3].Value = input.LimestoneConsumption;
-				worksheet.Cells[35, 3].Value = input.LimestoneDampness;
-				worksheet.Cells[36, 3].Value = input.MassLose;
-				var r = 38;
-				worksheet.Cells[r, 3].Value = input.Ratio; r++;
-				worksheet.Cells[r, 3].Value = input.SlagSulfur; r++;
-				worksheet.Cells[r, 3].Value = input.SlagHeatCapacity;
-				var topGasData = new double[5]
-				{
-					input.TopGasTemperature,
-					input.CO2,
-					input.CO,
-					input.H2,
-					input.N2
-				};
-				for (var row = 42; row < 47; row++)
-					worksheet.Cells[row, 3].Value = topGasData[row - 42];
-				r = 48;
-				worksheet.Cells[r, 3].Value = input.Consumption_IronMaterial; r++;
-				worksheet.Cells[r, 3].Value = input.Consumption_IronAddings; r++;
-				worksheet.Cells[r, 3].Value = input.IOMDampness; r++;
-			}
+			//using (var package = new ExcelPackage(fileinfo))
+			//{
+			//	var worksheet = package.Workbook.Worksheets["Исходные данные"];
+			//	// цикл - перебор и заполнение строк в .xlsx
+			//	var pigIronData = new double[10]
+			//	{
+			//		input.Si,
+			//		input.Mn,
+			//		input.S,
+			//		input.P,
+			//		input.Ti,
+			//		input.Cr,
+			//		input.V,
+			//		input.C,
+			//		input.PigIron_Temperature,
+			//		input.C
+			//	};
+			//	for (var row = 5; row < 15; row++)
+			//		worksheet.Cells[row, 3].Value = pigIronData[row - 5];
+			//	worksheet.Cells[16, 3].Value = input.StraightReduction;
+			//	var cokeData = new double[5]
+			//	{
+			//		input.Coke_Consumption,
+			//		input.Coke_Ash,
+			//		input.Sulfur,
+			//		input.Volatiles,
+			//		input.Dampness
+			//	}; //Характеристики кокса
+			//	for (var row = 18; row < 23; row++)
+			//		worksheet.Cells[row, 3].Value = cokeData[row - 18];
+			//	var airBlastingData = new double[9]
+			//	{
+			//		input.PigIron_Temperature,
+			//		input.AirBlastingDampness,
+			//		input.OxygenPercent,
+			//		input.AirBlastingConsumption,
+			//		input.Methane,
+			//		input.Ethane,
+			//		input.CarbonDioxide,
+			//		input.Carbon,
+			//		input.Hydrogen
+			//	};
+			//	for (var row = 24; row < 33; row++)
+			//		worksheet.Cells[row, 3].Value = airBlastingData[row - 24];
+			//	worksheet.Cells[34, 3].Value = input.LimestoneConsumption;
+			//	worksheet.Cells[35, 3].Value = input.LimestoneDampness;
+			//	worksheet.Cells[36, 3].Value = input.MassLose;
+			//	var r = 38;
+			//	worksheet.Cells[r, 3].Value = input.Ratio; r++;
+			//	worksheet.Cells[r, 3].Value = input.SlagSulfur; r++;
+			//	worksheet.Cells[r, 3].Value = input.SlagHeatCapacity;
+			//	var topGasData = new double[5]
+			//	{
+			//		input.TopGasTemperature,
+			//		input.CO2,
+			//		input.CO,
+			//		input.H2,
+			//		input.N2
+			//	};
+			//	for (var row = 42; row < 47; row++)
+			//		worksheet.Cells[row, 3].Value = topGasData[row - 42];
+			//	r = 48;
+			//	worksheet.Cells[r, 3].Value = input.Consumption_IronMaterial; r++;
+			//	worksheet.Cells[r, 3].Value = input.Consumption_IronAddings; r++;
+			//	worksheet.Cells[r, 3].Value = input.IOMDampness; r++;
+			//}
 			var output = new Output();
 			return View(output);
 		}

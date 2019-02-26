@@ -19,14 +19,22 @@ namespace HBDP.Models
 		{
 			using (var package = new ExcelPackage(file))
 			{
-				var worksheet = package.Workbook.Worksheets["Исходные данные"];
+				var cells = package.Workbook.Worksheets["Исходные данные"].Cells;
+				for (var row = 5; row < 15; row++)
+				{
+					PigIron.GetType().GetProperties()[row - 5].SetValue(PigIron, (double)cells[row, 3].Value);
+				}
 			}
 		}
 		public void WriteToExcel(FileInfo file)
 		{
 			using (var package = new ExcelPackage(file))
 			{
-				var worksheet = package.Workbook.Worksheets["Исходные данные"];
+				var cells = package.Workbook.Worksheets["Исходные данные"].Cells;
+				for (var row = 5; row < 15; row++)
+				{
+					cells[row, 3].Value = PigIron.GetType().GetProperties()[row - 5].GetValue(PigIron);
+				}
 			}
 		}
 		public RegimeData Regime { set; get; }
