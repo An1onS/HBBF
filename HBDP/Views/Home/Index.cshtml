@@ -12,6 +12,16 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <h3>Характеристики чугуна</h3>
             <div class="form-group">
+                <label asp-for="PigIronData[0]" class="control-label">asflkajs</label>
+                <input asp-for="PigIronData[0]" class="form-control" />
+                <span asp-validation-for="PigIronData[0]" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Regime.StraightReduction" class="control-label">regime</label>
+                <input asp-for="Regime.StraightReduction" class="form-control" />
+                <span asp-validation-for="Regime.StraightReduction" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="Si" class="control-label">Кремний</label>
                 <input asp-for="Si" class="form-control" />
                 <span asp-validation-for="Si" class="text-danger"></span>
@@ -52,14 +62,14 @@
                 <span asp-validation-for="C" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Temperature" class="control-label">Температура чугуна</label>
-                <input asp-for="Temperature" class="form-control" />
-                <span asp-validation-for="Temperature" class="text-danger"></span>
+                <label asp-for="PigIron_Temperature" class="control-label">Температура чугуна</label>
+                <input asp-for="PigIron_Temperature" class="form-control" />
+                <span asp-validation-for="PigIron_Temperature" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="HeatCapacity" class="control-label">Теплоёмкость чугуна</label>
-                <input asp-for="HeatCapacity" class="form-control" />
-                <span asp-validation-for="HeatCapacity" class="text-danger"></span>
+                <label asp-for="PigIron_HeatCapacity" class="control-label">Теплоёмкость чугуна</label>
+                <input asp-for="PigIron_HeatCapacity" class="form-control" />
+                <span asp-validation-for="PigIron_HeatCapacity" class="text-danger"></span>
             </div>
             <h3>Режим</h3>
             <div class="form-group">
@@ -69,14 +79,14 @@
             </div>
             <h3>Характеристики кокса</h3>
             <div class="form-group">
-                <label asp-for="Consumption" class="control-label">Удельный расход кокса</label>
-                <input asp-for="Consumption" class="form-control" />
-                <span asp-validation-for="Consumption" class="text-danger"></span>
+                <label asp-for="Coke_Consumption" class="control-label">Удельный расход кокса</label>
+                <input asp-for="Coke_Consumption" class="form-control" />
+                <span asp-validation-for="Coke_Consumption" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Ash" class="control-label">Зола</label>
-                <input asp-for="Ash" class="form-control" />
-                <span asp-validation-for="Ash" class="text-danger"></span>
+                <label asp-for="Coke_Ash" class="control-label">Зола</label>
+                <input asp-for="Coke_Ash" class="form-control" />
+                <span asp-validation-for="Coke_Ash" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Sulfur" class="control-label">Сера</label>
