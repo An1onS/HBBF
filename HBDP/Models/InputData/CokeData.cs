@@ -5,11 +5,11 @@
 		/// <summary>
 		/// Удельный расход кокса
 		/// </summary>		
-		public double Coke_Consumption { set; get; }
+		public double Consumption { set; get; }
 		/// <summary>
 		/// Зола кокса
 		/// </summary>
-		public double Coke_Ash { set; get; }
+		public double Ash { set; get; }
 		/// <summary>
 		/// Сера кокса
 		/// </summary>
