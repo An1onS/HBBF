@@ -30,12 +30,12 @@ namespace HBDP.Controllers
 		}
 		
 
-		public IActionResult Output(Input input)
+		public IActionResult Output()
 		{
 			var root = hostingEnvironment.WebRootPath;
 			var fileName = "Тепловой баланс доменной печи.xlsx";
 			var fileinfo = new FileInfo(Path.Combine(root, fileName));
-			var output = new Output();
+			var output = new Output(fileinfo);
 			return View(output);
 		}
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
