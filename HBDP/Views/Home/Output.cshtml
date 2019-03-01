@@ -1,134 +1,136 @@
-﻿@model HBDP.Models.Output
+﻿@*@model HBDP.Models.Output
 
 @{
     ViewData["Title"] = "Output";
 }
 
 <h2>Output</h2>
+<a href="~/Models/Output.cs">~/Models/Output.cs</a>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Output">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="O2_HeatCapacity" class="control-label"></label>
-                <input asp-for="O2_HeatCapacity" class="form-control" />
-                <span asp-validation-for="O2_HeatCapacity" class="text-danger"></span>
+                <label asp-for="Income.O2_HeatCapacity" class="control-label"></label>
+                <input asp-for="Income.O2_HeatCapacity" class="form-control" />
+                <span asp-validation-for="Income.O2_HeatCapacity" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="N2_HeatCapacity" class="control-label"></label>
-                <input asp-for="N2_HeatCapacity" class="form-control" />
-                <span asp-validation-for="N2_HeatCapacity" class="text-danger"></span>
+                <label asp-for="Income.N2_HeatCapacity" class="control-label"></label>
+                <input asp-for="Income.N2_HeatCapacity" class="form-control" />
+                <span asp-validation-for="Income.N2_HeatCapacity" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="H2O_HeatCapacity" class="control-label"></label>
-                <input asp-for="H2O_HeatCapacity" class="form-control" />
-                <span asp-validation-for="H2O_HeatCapacity" class="text-danger"></span>
+                <label asp-for="Income.H2O_HeatCapacity" class="control-label"></label>
+                <input asp-for="Income.H2O_HeatCapacity" class="form-control" />
+                <span asp-validation-for="Income.H2O_HeatCapacity" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CokeHeat" class="control-label"></label>
-                <input asp-for="CokeHeat" class="form-control" />
-                <span asp-validation-for="CokeHeat" class="text-danger"></span>
+                <label asp-for="Income.CokeHeat" class="control-label"></label>
+                <input asp-for="Income.CokeHeat" class="form-control" />
+                <span asp-validation-for="Income.CokeHeat" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CokeHeatPercent" class="control-label"></label>
-                <input asp-for="CokeHeatPercent" class="form-control" />
-                <span asp-validation-for="CokeHeatPercent" class="text-danger"></span>
+                <label asp-for="Income.CokeHeatPercent" class="control-label"></label>
+                <input asp-for="Income.CokeHeatPercent" class="form-control" />
+                <span asp-validation-for="Income.CokeHeatPercent" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="AirHeat" class="control-label"></label>
-                <input asp-for="AirHeat" class="form-control" />
-                <span asp-validation-for="AirHeat" class="text-danger"></span>
+                <label asp-for="Income.AirHeat" class="control-label"></label>
+                <input asp-for="Income.AirHeat" class="form-control" />
+                <span asp-validation-for="Income.AirHeat" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="AirHeatPercent" class="control-label"></label>
-                <input asp-for="AirHeatPercent" class="form-control" />
-                <span asp-validation-for="AirHeatPercent" class="text-danger"></span>
+                <label asp-for="Income.AirHeatPercent" class="control-label"></label>
+                <input asp-for="Income.AirHeatPercent" class="form-control" />
+                <span asp-validation-for="Income.AirHeatPercent" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="GasHeat" class="control-label"></label>
-                <input asp-for="GasHeat" class="form-control" />
-                <span asp-validation-for="GasHeat" class="text-danger"></span>
+                <label asp-for="Income.GasHeat" class="control-label"></label>
+                <input asp-for="Income.GasHeat" class="form-control" />
+                <span asp-validation-for="Income.GasHeat" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="GasHeatPercent" class="control-label"></label>
-                <input asp-for="GasHeatPercent" class="form-control" />
-                <span asp-validation-for="GasHeatPercent" class="text-danger"></span>
+                <label asp-for="Income.GasHeatPercent" class="control-label"></label>
+                <input asp-for="Income.GasHeatPercent" class="form-control" />
+                <span asp-validation-for="Income.GasHeatPercent" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="SlagHeat" class="control-label"></label>
-                <input asp-for="SlagHeat" class="form-control" />
-                <span asp-validation-for="SlagHeat" class="text-danger"></span>
+                <label asp-for="Income.SlagHeat" class="control-label"></label>
+                <input asp-for="Income.SlagHeat" class="form-control" />
+                <span asp-validation-for="Income.SlagHeat" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="SlagHeatPercent" class="control-label"></label>
-                <input asp-for="SlagHeatPercent" class="form-control" />
-                <span asp-validation-for="SlagHeatPercent" class="text-danger"></span>
+                <label asp-for="Income.SlagHeatPercent" class="control-label"></label>
+                <input asp-for="Income.SlagHeatPercent" class="form-control" />
+                <span asp-validation-for="Income.SlagHeatPercent" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Sum" class="control-label"></label>
-                <input asp-for="Sum" class="form-control" />
-                <span asp-validation-for="Sum" class="text-danger"></span>
+                <label asp-for="Income.Sum" class="control-label"></label>
+                <input asp-for="Income.Sum" class="form-control" />
+                <span asp-validation-for="Income.Sum" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="SumPercent" class="control-label"></label>
-                <input asp-for="SumPercent" class="form-control" />
-                <span asp-validation-for="SumPercent" class="text-danger"></span>
+                <label asp-for="Income.SumPercent" class="control-label"></label>
+                <input asp-for="Income.SumPercent" class="form-control" />
+                <span asp-validation-for="Income.SumPercent" class="text-danger"></span>
+            </div>
+            <h3></h3>
+            <div class="form-group">
+                <label asp-for="Withdrawal.CO" class="control-label"></label>
+                <input asp-for="Withdrawal.CO" class="form-control" />
+                <span asp-validation-for="Withdrawal.CO" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CO_HeatCapacity" class="control-label"></label>
-                <input asp-for="CO_HeatCapacity" class="form-control" />
-                <span asp-validation-for="CO_HeatCapacity" class="text-danger"></span>
+                <label asp-for="Withdrawal.CO2" class="control-label"></label>
+                <input asp-for="Withdrawal.CO2" class="form-control" />
+                <span asp-validation-for="Withdrawal.CO2" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CO2_HeatCapacity" class="control-label"></label>
-                <input asp-for="CO2_HeatCapacity" class="form-control" />
-                <span asp-validation-for="CO2_HeatCapacity" class="text-danger"></span>
+                <label asp-for="Withdrawal.H2" class="control-label"></label>
+                <input asp-for="Withdrawal.H2" class="form-control" />
+                <span asp-validation-for="Withdrawal.H2" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="H2_HeatCapacity" class="control-label"></label>
-                <input asp-for="H2_HeatCapacity" class="form-control" />
-                <span asp-validation-for="H2_HeatCapacity" class="text-danger"></span>
+                <label asp-for="Withdrawal.H2O" class="control-label"></label>
+                <input asp-for="Withdrawal.H2O" class="form-control" />
+                <span asp-validation-for="Withdrawal.H2O" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="W_H2O_HeatCapacity" class="control-label"></label>
-                <input asp-for="W_H2O_HeatCapacity" class="form-control" />
-                <span asp-validation-for="W_H2O_HeatCapacity" class="text-danger"></span>
+                <label asp-for="Withdrawal.N2" class="control-label"></label>
+                <input asp-for="Withdrawal.N2" class="form-control" />
+                <span asp-validation-for="Withdrawal.N2" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="W_N2_HeatCapacity" class="control-label"></label>
-                <input asp-for="W_N2_HeatCapacity" class="form-control" />
-                <span asp-validation-for="W_N2_HeatCapacity" class="text-danger"></span>
+                <label asp-for="Withdrawal.FeReduction" class="control-label"></label>
+                <input asp-for="Withdrawal.FeReduction" class="form-control" />
+                <span asp-validation-for="Withdrawal.FeReduction" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="FeReduction" class="control-label"></label>
-                <input asp-for="FeReduction" class="form-control" />
-                <span asp-validation-for="FeReduction" class="text-danger"></span>
+                <label asp-for="Withdrawal.FeReductionPercent" class="control-label"></label>
+                <input asp-for="Withdrawal.FeReductionPercent" class="form-control" />
+                <span asp-validation-for="Withdrawal.FeReductionPercent" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="FeReductionPercent" class="control-label"></label>
-                <input asp-for="FeReductionPercent" class="form-control" />
-                <span asp-validation-for="FeReductionPercent" class="text-danger"></span>
+                <label asp-for="Withdrawal.ResidualsReduction" class="control-label"></label>
+                <input asp-for="Withdrawal.ResidualsReduction" class="form-control" />
+                <span asp-validation-for="Withdrawal.ResidualsReduction" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ResidualsReduction" class="control-label"></label>
-                <input asp-for="ResidualsReduction" class="form-control" />
-                <span asp-validation-for="ResidualsReduction" class="text-danger"></span>
+                <label asp-for="Withdrawal.ResidualsReductionPercent" class="control-label"></label>
+                <input asp-for="Withdrawal.ResidualsReductionPercent" class="form-control" />
+                <span asp-validation-for="Withdrawal.ResidualsReductionPercent" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ResidualsReductionPercent" class="control-label"></label>
-                <input asp-for="ResidualsReductionPercent" class="form-control" />
-                <span asp-validation-for="ResidualsReductionPercent" class="text-danger"></span>
+                <label asp-for="Withdrawal.Desulfuration" class="control-label"></label>
+                <input asp-for="Withdrawal.Desulfuration" class="form-control" />
+                <span asp-validation-for="Withdrawal.Desulfuration" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Desulfuration" class="control-label"></label>
-                <input asp-for="Desulfuration" class="form-control" />
-                <span asp-validation-for="Desulfuration" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DesulfurationPercent" class="control-label"></label>
-                <input asp-for="DesulfurationPercent" class="form-control" />
-                <span asp-validation-for="DesulfurationPercent" class="text-danger"></span>
+                <label asp-for="Withdrawal.DesulfurationPercent" class="control-label"></label>
+                <input asp-for="Withdrawal.DesulfurationPercent" class="form-control" />
+                <span asp-validation-for="Withdrawal.DesulfurationPercent" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Fe_H2_Reduction" class="control-label"></label>
@@ -313,4 +315,4 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+}*@
