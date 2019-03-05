@@ -1,306 +1,309 @@
-﻿@*@model HBDP.Models.Output
-
+﻿@model HBDP.Models.Output
+@* Заменить 8 и 4 на 6 и 2 *@
 @{
-    ViewData["Title"] = "Output";
+    ViewData["Title"] = "Вывод";
 }
 
-<h2>Output</h2>
-<a href="~/Models/Output.cs">~/Models/Output.cs</a>
+<h2>Вывод</h2>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-12">
         <form asp-action="Output">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Income.O2_HeatCapacity" class="control-label"></label>
-                <input asp-for="Income.O2_HeatCapacity" class="form-control" />
-                <span asp-validation-for="Income.O2_HeatCapacity" class="text-danger"></span>
+            <h3>Приходная часть теплового баланса</h3>
+            <h4>Теплоёмкость веществ при температуре дутья:</h4>
+            <div class="form row">
+                <div class="form-group col-sm-4">
+                    <label asp-for="Income.O2_HeatCapacity" class="control-label">Кислород</label>
+                    <input asp-for="Income.O2_HeatCapacity" class="form-control" readonly />
+                </div>
+                <div class="form-group col-sm-4">
+                    <label asp-for="Income.N2_HeatCapacity" class="control-label">Азот</label>
+                    <input asp-for="Income.N2_HeatCapacity" class="form-control" readonly />
+                </div>
+                <div class="form-group col-sm-4">
+                    <label asp-for="Income.H2O_HeatCapacity" class="control-label">Вода</label>
+                    <input asp-for="Income.H2O_HeatCapacity" class="form-control" readonly />
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Income.N2_HeatCapacity" class="control-label"></label>
-                <input asp-for="Income.N2_HeatCapacity" class="form-control" />
-                <span asp-validation-for="Income.N2_HeatCapacity" class="text-danger"></span>
+            <div class="form row">
+                <div class="form-group col-sm-8">
+                    <label asp-for="Income.CokeHeat" class="control-label">Количество тепла, получаемого от сгорания углерода кокса</label>
+                    <input asp-for="Income.CokeHeat" class="form-control" readonly />
+                </div>
+                <div class="form-group col-sm-4">
+                    <label asp-for="Income.CokeHeatPercent" class="control-label">%</label>
+                    <input asp-for="Income.CokeHeatPercent" class="form-control" readonly />
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Income.H2O_HeatCapacity" class="control-label"></label>
-                <input asp-for="Income.H2O_HeatCapacity" class="form-control" />
-                <span asp-validation-for="Income.H2O_HeatCapacity" class="text-danger"></span>
+            <div class="form row">
+                <div class="form-group col-sm-8">
+                    <label asp-for="Income.AirHeat" class="control-label">Количество тепла от дутья</label>
+                    <input asp-for="Income.AirHeat" class="form-control" readonly />
+                </div>
+                <div class="form-group col-sm-4">
+                    <label asp-for="Income.AirHeatPercent" class="control-label">%</label>
+                    <input asp-for="Income.AirHeatPercent" class="form-control" readonly />
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Income.CokeHeat" class="control-label"></label>
-                <input asp-for="Income.CokeHeat" class="form-control" />
-                <span asp-validation-for="Income.CokeHeat" class="text-danger"></span>
+            <div class="form row">
+                <div class="form-group col-sm-8">
+                    <label asp-for="Income.GasHeat" class="control-label">Количество тепла от конверсии природного газа</label>
+                    <input asp-for="Income.GasHeat" class="form-control" readonly />
+                </div>
+                <div class="form-group col-sm-4">
+                    <label asp-for="Income.GasHeatPercent" class="control-label">%</label>
+                    <input asp-for="Income.GasHeatPercent" class="form-control" readonly />
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Income.CokeHeatPercent" class="control-label"></label>
-                <input asp-for="Income.CokeHeatPercent" class="form-control" />
-                <span asp-validation-for="Income.CokeHeatPercent" class="text-danger"></span>
+            <div class="form row">
+                <div class="form-group col-sm-8">
+                    <label asp-for="Income.SlagHeat" class="control-label">Количество тепла от шлакообразования</label>
+                    <input asp-for="Income.SlagHeat" class="form-control" readonly />
+                </div>
+                <div class="form-group col-sm-4">
+                    <label asp-for="Income.SlagHeatPercent" class="control-label">%</label>
+                    <input asp-for="Income.SlagHeatPercent" class="form-control" readonly />
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Income.AirHeat" class="control-label"></label>
-                <input asp-for="Income.AirHeat" class="form-control" />
-                <span asp-validation-for="Income.AirHeat" class="text-danger"></span>
+            <div class="form row">
+                <div class="form-group col-sm-8">
+                    <label asp-for="Income.Sum" class="control-label">Сумма приходных статей теплового баланса</label>
+                    <input asp-for="Income.Sum" class="form-control" readonly />
+                </div>
+                <div class="form-group col-sm-4">
+                    <label asp-for="Income.SumPercent" class="control-label">%</label>
+                    <input asp-for="Income.SumPercent" class="form-control" readonly />
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Income.AirHeatPercent" class="control-label"></label>
-                <input asp-for="Income.AirHeatPercent" class="form-control" />
-                <span asp-validation-for="Income.AirHeatPercent" class="text-danger"></span>
+            <h3>Расходная часть теплового баланса</h3>
+            <h4>Теплоёмкость веществ при температуре колошникового газа</h4>
+            <div class="form row">
+                <div class="form-group col-sm-2">
+                    <label asp-for="Withdrawal.CO" class="control-label">CO</label>
+                    <input asp-for="Withdrawal.CO" class="form-control" readonly />
+                </div>
+                <div class="form-group col-sm-2">
+                    <label asp-for="Withdrawal.CO2" class="control-label">CO2</label>
+                    <input asp-for="Withdrawal.CO2" class="form-control" readonly />
+                </div>
+                <div class="form-group col-sm-2">
+                    <label asp-for="Withdrawal.H2" class="control-label">H2</label>
+                    <input asp-for="Withdrawal.H2" class="form-control" readonly />
+                </div>
+                <div class="form-group col-sm-2">
+                    <label asp-for="Withdrawal.H2O" class="control-label">H2O</label>
+                    <input asp-for="Withdrawal.H2O" class="form-control" readonly />
+                </div>
+                <div class="form-group col-sm-2">
+                    <label asp-for="Withdrawal.N2" class="control-label">N2</label>
+                    <input asp-for="Withdrawal.N2" class="form-control" readonly />
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Income.GasHeat" class="control-label"></label>
-                <input asp-for="Income.GasHeat" class="form-control" />
-                <span asp-validation-for="Income.GasHeat" class="text-danger"></span>
+            <h4>Расход тепла на:</h4>
+            <div class="form row">
+                <div class="form-group col-sm-8">
+                    <label asp-for="Withdrawal.FeReduction" class="control-label">Прямое восстановление оксидов железа</label>
+                    <input asp-for="Withdrawal.FeReduction" class="form-control" readonly />
+                </div>
+                <div class="form-group col-sm-4">
+                    <label asp-for="Withdrawal.FeReductionPercent" class="control-label">%</label>
+                    <input asp-for="Withdrawal.FeReductionPercent" class="form-control" readonly />
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Income.GasHeatPercent" class="control-label"></label>
-                <input asp-for="Income.GasHeatPercent" class="form-control" />
-                <span asp-validation-for="Income.GasHeatPercent" class="text-danger"></span>
+            <div class="form row">
+                <div class="form-group col-sm-8">
+                    <label asp-for="Withdrawal.ResidualsReduction" class="control-label">Прямое восстановление примесей чугуна</label>
+                    <input asp-for="Withdrawal.ResidualsReduction" class="form-control" readonly />
+                </div>
+                <div class="form-group col-sm-4">
+                    <label asp-for="Withdrawal.ResidualsReductionPercent" class="control-label">%</label>
+                    <input asp-for="Withdrawal.ResidualsReductionPercent" class="form-control" readonly />
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Income.SlagHeat" class="control-label"></label>
-                <input asp-for="Income.SlagHeat" class="form-control" />
-                <span asp-validation-for="Income.SlagHeat" class="text-danger"></span>
+
+            <div class="form row">
+                <div class="form-group col-sm-8">
+                    <label asp-for="Withdrawal.Desulfuration" class="control-label">Процесс десульфурации чугуна</label>
+                    <input asp-for="Withdrawal.Desulfuration" class="form-control" readonly />
+                </div>
+                <div class="form-group col-sm-4">
+                    <label asp-for="Withdrawal.DesulfurationPercent" class="control-label">%</label>
+                    <input asp-for="Withdrawal.DesulfurationPercent" class="form-control" readonly />
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Income.SlagHeatPercent" class="control-label"></label>
-                <input asp-for="Income.SlagHeatPercent" class="form-control" />
-                <span asp-validation-for="Income.SlagHeatPercent" class="text-danger"></span>
+
+            <div class="form row">
+                <div class="form-group col-sm-8">
+                    <label asp-for="Withdrawal.FeHydrogenicReduction" class="control-label">Восстановление оксидов железа водородом</label>
+                    <input asp-for="Withdrawal.FeHydrogenicReduction" class="form-control" readonly />
+                </div>
+                <div class="form-group col-sm-4">
+                    <label asp-for="Withdrawal.FeHydrogenicReductionPercent" class="control-label">%</label>
+                    <input asp-for="Withdrawal.FeHydrogenicReductionPercent" class="form-control" readonly />
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Income.Sum" class="control-label"></label>
-                <input asp-for="Income.Sum" class="form-control" />
-                <span asp-validation-for="Income.Sum" class="text-danger"></span>
+
+            <div class="form row">
+                <div class="form-group col-sm-8">
+                    <label asp-for="Withdrawal.PigIronHeating" class="control-label">Нагрев жидкого чугуна</label>
+                    <input asp-for="Withdrawal.PigIronHeating" class="form-control" readonly />
+                </div>
+                <div class="form-group col-sm-4">
+                    <label asp-for="Withdrawal.PigIronHeatingPercent" class="control-label">%</label>
+                    <input asp-for="Withdrawal.PigIronHeatingPercent" class="form-control" readonly />
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Income.SumPercent" class="control-label"></label>
-                <input asp-for="Income.SumPercent" class="form-control" />
-                <span asp-validation-for="Income.SumPercent" class="text-danger"></span>
+
+            <div class="form row">
+                <div class="form-group col-sm-8">
+                    <label asp-for="Withdrawal.SlagHeating" class="control-label">Нагрев жидкого шлака</label>
+                    <input asp-for="Withdrawal.SlagHeating" class="form-control" readonly />
+                </div>
+                <div class="form-group col-sm-4">
+                    <label asp-for="Withdrawal.SlagHeatingPercent" class="control-label">%</label>
+                    <input asp-for="Withdrawal.SlagHeatingPercent" class="form-control" readonly />
+                </div>
             </div>
+
+            <div class="form row">
+                <div class="form-group col-sm-8">
+                    <label asp-for="Withdrawal.AirDegrading" class="control-label">Разложение влаги дутья</label>
+                    <input asp-for="Withdrawal.AirDegrading" class="form-control" readonly />
+                </div>
+                <div class="form-group col-sm-4">
+                    <label asp-for="Withdrawal.AirDegradingPercent" class="control-label">%</label>
+                    <input asp-for="Withdrawal.AirDegradingPercent" class="form-control" readonly />
+                </div>
+            </div>
+
+            <div class="form row">
+                <div class="form-group col-sm-8">
+                    <label asp-for="Withdrawal.LimestoneDegrading" class="control-label">Разложение известняка</label>
+                    <input asp-for="Withdrawal.LimestoneDegrading" class="form-control" readonly />
+                </div>
+                <div class="form-group col-sm-4">
+                    <label asp-for="Withdrawal.LimestoneDegradingPercent" class="control-label">%</label>
+                    <input asp-for="Withdrawal.LimestoneDegradingPercent" class="form-control" readonly />
+                </div>
+            </div>
+
+            <div class="form row">
+                <div class="form-group col-sm-8">
+                    <label asp-for="Withdrawal.StockDegrading" class="control-label">Разложение влаги шихты</label>
+                    <input asp-for="Withdrawal.StockDegrading" class="form-control" readonly />
+                </div>
+                <div class="form-group col-sm-4">
+                    <label asp-for="Withdrawal.StockDegradingPercent" class="control-label">%</label>
+                    <input asp-for="Withdrawal.StockDegradingPercent" class="form-control" readonly />
+                </div>
+            </div>
+
+            <div class="form row">
+                <div class="form-group col-sm-8">
+                    <label asp-for="Withdrawal.TopGas" class="control-label">Тепло, уносимое колошниковым газом</label>
+                    <input asp-for="Withdrawal.TopGas" class="form-control" readonly />
+                </div>
+                <div class="form-group col-sm-4">
+                    <label asp-for="Withdrawal.TopGasPercent" class="control-label">%</label>
+                    <input asp-for="Withdrawal.TopGasPercent" class="form-control" readonly />
+                </div>
+            </div>
+            
+            <div class="form row">
+                <div class="form-group col-sm-8">
+                    <label asp-for="Withdrawal.Losses" class="control-label">Тепловые потери</label>
+                    <input asp-for="Withdrawal.Losses" class="form-control" readonly />
+                </div>
+                <div class="form-group col-sm-4">
+                    <label asp-for="Withdrawal.LossesPercent" class="control-label">%</label>
+                    <input asp-for="Withdrawal.LossesPercent" class="form-control" readonly />
+                </div>
+            </div>
+            
+            <div class="form row">
+                <div class="form-group col-sm-8">
+                    <label asp-for="Withdrawal.Sum" class="control-label">Сумма расходных статей теплового баланса</label>
+                    <input asp-for="Withdrawal.Sum" class="form-control" readonly />
+                </div>
+                <div class="form-group col-sm-4">
+                    <label asp-for="Withdrawal.SumPercent" class="control-label">%</label>
+                    <input asp-for="Withdrawal.SumPercent" class="form-control" readonly />
+                </div>
+            </div>
+            
             <h3></h3>
             <div class="form-group">
-                <label asp-for="Withdrawal.CO" class="control-label"></label>
-                <input asp-for="Withdrawal.CO" class="form-control" />
-                <span asp-validation-for="Withdrawal.CO" class="text-danger"></span>
+                <label asp-for="Influence.Q" class="control-label"></label>
+                <input asp-for="Influence.Q" class="form-control" readonly />
             </div>
             <div class="form-group">
-                <label asp-for="Withdrawal.CO2" class="control-label"></label>
-                <input asp-for="Withdrawal.CO2" class="form-control" />
-                <span asp-validation-for="Withdrawal.CO2" class="text-danger"></span>
+                <label asp-for="Influence.QtoC" class="control-label"></label>
+                <input asp-for="Influence.QtoC" class="form-control" readonly />
             </div>
             <div class="form-group">
-                <label asp-for="Withdrawal.H2" class="control-label"></label>
-                <input asp-for="Withdrawal.H2" class="form-control" />
-                <span asp-validation-for="Withdrawal.H2" class="text-danger"></span>
+                <label asp-for="Influence.CokeC" class="control-label"></label>
+                <input asp-for="Influence.CokeC" class="form-control" readonly />
             </div>
             <div class="form-group">
-                <label asp-for="Withdrawal.H2O" class="control-label"></label>
-                <input asp-for="Withdrawal.H2O" class="form-control" />
-                <span asp-validation-for="Withdrawal.H2O" class="text-danger"></span>
+                <label asp-for="Influence.Rd.value" class="control-label"></label>
+                <input asp-for="Influence.Rd.value" class="form-control" readonly />
             </div>
             <div class="form-group">
-                <label asp-for="Withdrawal.N2" class="control-label"></label>
-                <input asp-for="Withdrawal.N2" class="form-control" />
-                <span asp-validation-for="Withdrawal.N2" class="text-danger"></span>
+                <label asp-for="Influence.Rd.economy" class="control-label"></label>
+                <input asp-for="Influence.Rd.economy" class="form-control" readonly />
             </div>
             <div class="form-group">
-                <label asp-for="Withdrawal.FeReduction" class="control-label"></label>
-                <input asp-for="Withdrawal.FeReduction" class="form-control" />
-                <span asp-validation-for="Withdrawal.FeReduction" class="text-danger"></span>
+                <label asp-for="Influence.Limestone.value" class="control-label"></label>
+                <input asp-for="Influence.Limestone.value" class="form-control" readonly />
             </div>
             <div class="form-group">
-                <label asp-for="Withdrawal.FeReductionPercent" class="control-label"></label>
-                <input asp-for="Withdrawal.FeReductionPercent" class="form-control" />
-                <span asp-validation-for="Withdrawal.FeReductionPercent" class="text-danger"></span>
+                <label asp-for="Influence.Limestone.coke" class="control-label"></label>
+                <input asp-for="Influence.Limestone.coke" class="form-control" readonly />
             </div>
             <div class="form-group">
-                <label asp-for="Withdrawal.ResidualsReduction" class="control-label"></label>
-                <input asp-for="Withdrawal.ResidualsReduction" class="form-control" />
-                <span asp-validation-for="Withdrawal.ResidualsReduction" class="text-danger"></span>
+                <label asp-for="Influence.Limestone.full" class="control-label"></label>
+                <input asp-for="Influence.Limestone.full" class="form-control" readonly />
             </div>
             <div class="form-group">
-                <label asp-for="Withdrawal.ResidualsReductionPercent" class="control-label"></label>
-                <input asp-for="Withdrawal.ResidualsReductionPercent" class="form-control" />
-                <span asp-validation-for="Withdrawal.ResidualsReductionPercent" class="text-danger"></span>
+                <label asp-for="Influence.AirBlasting.value" class="control-label"></label>
+                <input asp-for="Influence.AirBlasting.value" class="form-control" readonly />
             </div>
             <div class="form-group">
-                <label asp-for="Withdrawal.Desulfuration" class="control-label"></label>
-                <input asp-for="Withdrawal.Desulfuration" class="form-control" />
-                <span asp-validation-for="Withdrawal.Desulfuration" class="text-danger"></span>
+                <label asp-for="Influence.AirBlasting.economy" class="control-label"></label>
+                <input asp-for="Influence.AirBlasting.economy" class="form-control" readonly />
             </div>
             <div class="form-group">
-                <label asp-for="Withdrawal.DesulfurationPercent" class="control-label"></label>
-                <input asp-for="Withdrawal.DesulfurationPercent" class="form-control" />
-                <span asp-validation-for="Withdrawal.DesulfurationPercent" class="text-danger"></span>
+                <label asp-for="Influence.Combined.value" class="control-label"></label>
+                <input asp-for="Influence.Combined.value" class="form-control" readonly />
             </div>
             <div class="form-group">
-                <label asp-for="Fe_H2_Reduction" class="control-label"></label>
-                <input asp-for="Fe_H2_Reduction" class="form-control" />
-                <span asp-validation-for="Fe_H2_Reduction" class="text-danger"></span>
+                <label asp-for="Influence.Combined.economy" class="control-label"></label>
+                <input asp-for="Influence.Combined.economy" class="form-control" readonly />
             </div>
             <div class="form-group">
-                <label asp-for="Fe_H2_ReductionPercent" class="control-label"></label>
-                <input asp-for="Fe_H2_ReductionPercent" class="form-control" />
-                <span asp-validation-for="Fe_H2_ReductionPercent" class="text-danger"></span>
+                <label asp-for="Influence.Dampness.value" class="control-label"></label>
+                <input asp-for="Influence.Dampness.value" class="form-control" readonly />
             </div>
             <div class="form-group">
-                <label asp-for="PigIronHeating" class="control-label"></label>
-                <input asp-for="PigIronHeating" class="form-control" />
-                <span asp-validation-for="PigIronHeating" class="text-danger"></span>
+                <label asp-for="Influence.Dampness.economy" class="control-label"></label>
+                <input asp-for="Influence.Dampness.economy" class="form-control" readonly />
             </div>
             <div class="form-group">
-                <label asp-for="PigIronHeatingPercent" class="control-label"></label>
-                <input asp-for="PigIronHeatingPercent" class="form-control" />
-                <span asp-validation-for="PigIronHeatingPercent" class="text-danger"></span>
+                <label asp-for="Influence.SlagProduction.heat" class="control-label"></label>
+                <input asp-for="Influence.SlagProduction.heat" class="form-control" readonly />
             </div>
             <div class="form-group">
-                <label asp-for="SlagHeating" class="control-label"></label>
-                <input asp-for="SlagHeating" class="form-control" />
-                <span asp-validation-for="SlagHeating" class="text-danger"></span>
+                <label asp-for="Influence.SlagProduction.coke" class="control-label"></label>
+                <input asp-for="Influence.SlagProduction.coke" class="form-control" readonly />
             </div>
             <div class="form-group">
-                <label asp-for="SlagHeatingPercent" class="control-label"></label>
-                <input asp-for="SlagHeatingPercent" class="form-control" />
-                <span asp-validation-for="SlagHeatingPercent" class="text-danger"></span>
+                <label asp-for="Influence.HeatLosses.heat" class="control-label"></label>
+                <input asp-for="Influence.HeatLosses.heat" class="form-control" readonly />
             </div>
             <div class="form-group">
-                <label asp-for="DegradingAirH20" class="control-label"></label>
-                <input asp-for="DegradingAirH20" class="form-control" />
-                <span asp-validation-for="DegradingAirH20" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DegradingAirH20_Percent" class="control-label"></label>
-                <input asp-for="DegradingAirH20_Percent" class="form-control" />
-                <span asp-validation-for="DegradingAirH20_Percent" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DegradingStock" class="control-label"></label>
-                <input asp-for="DegradingStock" class="form-control" />
-                <span asp-validation-for="DegradingStock" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DegradingStockPercent" class="control-label"></label>
-                <input asp-for="DegradingStockPercent" class="form-control" />
-                <span asp-validation-for="DegradingStockPercent" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TopGas" class="control-label"></label>
-                <input asp-for="TopGas" class="form-control" />
-                <span asp-validation-for="TopGas" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TopGasPercent" class="control-label"></label>
-                <input asp-for="TopGasPercent" class="form-control" />
-                <span asp-validation-for="TopGasPercent" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Losses" class="control-label"></label>
-                <input asp-for="Losses" class="form-control" />
-                <span asp-validation-for="Losses" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LossesPercent" class="control-label"></label>
-                <input asp-for="LossesPercent" class="form-control" />
-                <span asp-validation-for="LossesPercent" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="W_Sum" class="control-label"></label>
-                <input asp-for="W_Sum" class="form-control" />
-                <span asp-validation-for="W_Sum" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="W_SumPercent" class="control-label"></label>
-                <input asp-for="W_SumPercent" class="form-control" />
-                <span asp-validation-for="W_SumPercent" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Q" class="control-label"></label>
-                <input asp-for="Q" class="form-control" />
-                <span asp-validation-for="Q" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="QtoC" class="control-label"></label>
-                <input asp-for="QtoC" class="form-control" />
-                <span asp-validation-for="QtoC" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CokeC" class="control-label"></label>
-                <input asp-for="CokeC" class="form-control" />
-                <span asp-validation-for="CokeC" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Rd" class="control-label"></label>
-                <input asp-for="Rd" class="form-control" />
-                <span asp-validation-for="Rd" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="RdCoke" class="control-label"></label>
-                <input asp-for="RdCoke" class="form-control" />
-                <span asp-validation-for="RdCoke" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Limestone" class="control-label"></label>
-                <input asp-for="Limestone" class="form-control" />
-                <span asp-validation-for="Limestone" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LimestoneCoke" class="control-label"></label>
-                <input asp-for="LimestoneCoke" class="form-control" />
-                <span asp-validation-for="LimestoneCoke" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LimestoneFull" class="control-label"></label>
-                <input asp-for="LimestoneFull" class="form-control" />
-                <span asp-validation-for="LimestoneFull" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AirBlasting" class="control-label"></label>
-                <input asp-for="AirBlasting" class="form-control" />
-                <span asp-validation-for="AirBlasting" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AirBlastingCoke" class="control-label"></label>
-                <input asp-for="AirBlastingCoke" class="form-control" />
-                <span asp-validation-for="AirBlastingCoke" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Conversion" class="control-label"></label>
-                <input asp-for="Conversion" class="form-control" />
-                <span asp-validation-for="Conversion" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ConversionCoke" class="control-label"></label>
-                <input asp-for="ConversionCoke" class="form-control" />
-                <span asp-validation-for="ConversionCoke" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Dampness" class="control-label"></label>
-                <input asp-for="Dampness" class="form-control" />
-                <span asp-validation-for="Dampness" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DampnessCoke" class="control-label"></label>
-                <input asp-for="DampnessCoke" class="form-control" />
-                <span asp-validation-for="DampnessCoke" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SlagHeatEconomy" class="control-label"></label>
-                <input asp-for="SlagHeatEconomy" class="form-control" />
-                <span asp-validation-for="SlagHeatEconomy" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SlagCokeEconomy" class="control-label"></label>
-                <input asp-for="SlagCokeEconomy" class="form-control" />
-                <span asp-validation-for="SlagCokeEconomy" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LossesHeatEconomy" class="control-label"></label>
-                <input asp-for="LossesHeatEconomy" class="form-control" />
-                <span asp-validation-for="LossesHeatEconomy" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LossesCokeEconomy" class="control-label"></label>
-                <input asp-for="LossesCokeEconomy" class="form-control" />
-                <span asp-validation-for="LossesCokeEconomy" class="text-danger"></span>
+                <label asp-for="Influence.HeatLosses.coke" class="control-label"></label>
+                <input asp-for="Influence.HeatLosses.coke" class="form-control" readonly />
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
@@ -315,4 +318,4 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}*@
+}
