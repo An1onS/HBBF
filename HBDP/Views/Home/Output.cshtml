@@ -232,82 +232,105 @@
                 </div>
             </div>
             
-            <h3></h3>
+            <h3>Влияние различных факторов на статьи теплового баланса и удельный расход кокса</h3>
             <div class="form-group">
-                <label asp-for="Influence.Q" class="control-label"></label>
+                <label asp-for="Influence.Q" class="control-label">Приход тепла от горения кокса у фурм и горячего дутья за вычетом тепла, уносимого колошниковым газом</label>
                 <input asp-for="Influence.Q" class="form-control" readonly />
             </div>
             <div class="form-group">
-                <label asp-for="Influence.QtoC" class="control-label"></label>
+                <label asp-for="Influence.QtoC" class="control-label">Приход тепла, отнесенный к количеству углерода, сгорающего у фурм</label>
                 <input asp-for="Influence.QtoC" class="form-control" readonly />
             </div>
             <div class="form-group">
-                <label asp-for="Influence.CokeC" class="control-label"></label>
+                <label asp-for="Influence.CokeC" class="control-label">Содержание углерода в коксе</label>
                 <input asp-for="Influence.CokeC" class="form-control" readonly />
             </div>
-            <div class="form-group">
-                <label asp-for="Influence.Rd.value" class="control-label"></label>
-                <input asp-for="Influence.Rd.value" class="form-control" readonly />
+            <h4>1.Влияние степени прямого восстановления на расход кокса</h4>
+            <div class="form row">
+                <div class="form-group col-sm-8">
+                    <label asp-for="Influence.Rd.value" class="control-label">Снижение статьи расхода тепла на прямое восстановление при уменьшении rd на 0,01 </label>
+                    <input asp-for="Influence.Rd.value" class="form-control" readonly />
+                </div>
+                <div class="form-group col-sm-4">
+                    <label asp-for="Influence.Rd.economy" class="control-label">Снижение расхода кокса</label>
+                    <input asp-for="Influence.Rd.economy" class="form-control" readonly />
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Influence.Rd.economy" class="control-label"></label>
-                <input asp-for="Influence.Rd.economy" class="form-control" readonly />
+            <h4>2.Влияние ввода в печь сырого известняка на расход кокса</h4>
+            <div class="form row">
+                <div class="form-group">
+                    <label asp-for="Influence.Limestone.value" class="control-label">Снижение статьи расхода тепла на разложение известняка при выводе его из шихты в количетве 10 кг  </label>
+                    <input asp-for="Influence.Limestone.value" class="form-control" readonly />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Influence.Limestone.coke" class="control-label">Cнижение расхода кокса</label>
+                    <input asp-for="Influence.Limestone.coke" class="form-control" readonly />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Influence.Limestone.full" class="control-label">Экономия кокса при полном выводе известняка</label>
+                    <input asp-for="Influence.Limestone.full" class="form-control" readonly />
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Influence.Limestone.value" class="control-label"></label>
-                <input asp-for="Influence.Limestone.value" class="form-control" readonly />
+
+            <h4>3.Влияние температуры горячего дутья на расход кокса</h4>
+            <div class="form row">
+                <div class="form-group col">
+                    <label asp-for="Influence.AirBlasting.value" class="control-label">Прирост статьи притока тепла горячего дутья при повышении его температуры на 10 °C</label>
+                    <input asp-for="Influence.AirBlasting.value" class="form-control" readonly />
+                </div>
+                <div class="form-group col">
+                    <label asp-for="Influence.AirBlasting.economy" class="control-label">Экономия кокса при повышении температуры дутья на 10 °C</label>
+                    <input asp-for="Influence.AirBlasting.economy" class="form-control" readonly />
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Influence.Limestone.coke" class="control-label"></label>
-                <input asp-for="Influence.Limestone.coke" class="form-control" readonly />
+            <h4>4.Влияние состава комбинированного дутья на расход кокса</h4>
+            <div class="form row">
+                <div class="form-group col">
+                    <label asp-for="Influence.Combined.value" class="control-label">Прирост статьи притока тепла от конверсии природного газа при повышении его расхода на 10 м3/т</label>
+                    <input asp-for="Influence.Combined.value" class="form-control" readonly />
+                </div>
+                <div class="form-group col">
+                    <label asp-for="Influence.Combined.economy" class="control-label">Экономия кокса при повышении расхода природного газа на 10 м3/т</label>
+                    <input asp-for="Influence.Combined.economy" class="form-control" readonly />
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Influence.Limestone.full" class="control-label"></label>
-                <input asp-for="Influence.Limestone.full" class="form-control" readonly />
+            <h4>5.Влияние влажности комбинированного дутья на расход кокса</h4>
+            <div class="form row">
+                <div class="form-group col">
+                    <label asp-for="Influence.Dampness.value" class="control-label">Снижение статьи расхода тепла на разложение влаги дутья при уменьшении влажности дутья на 1 г/м3</label>
+                    <input asp-for="Influence.Dampness.value" class="form-control" readonly />
+                </div>
+                <div class="form-group col">
+                    <label asp-for="Influence.Dampness.economy" class="control-label">Экономия кокса при снижении влажности дутья на 1 г/м3</label>
+                    <input asp-for="Influence.Dampness.economy" class="form-control" readonly />
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Influence.AirBlasting.value" class="control-label"></label>
-                <input asp-for="Influence.AirBlasting.value" class="form-control" readonly />
+            <h4>6.Влияние выхода шлака на расход кокса</h4>
+            <div class="form row">
+                <div class="form-group col">
+                    <label asp-for="Influence.SlagProduction.heat" class="control-label">Экономия тепла при снижении выхода шлака на 10 кг</label>
+                    <input asp-for="Influence.SlagProduction.heat" class="form-control" readonly />
+                </div>
+                <div class="form-group col">
+                    <label asp-for="Influence.SlagProduction.coke" class="control-label">Экономия кокса при снижении выхода шлака на 10 кг</label>
+                    <input asp-for="Influence.SlagProduction.coke" class="form-control" readonly />
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Influence.AirBlasting.economy" class="control-label"></label>
-                <input asp-for="Influence.AirBlasting.economy" class="form-control" readonly />
+            <h4>7.Влияние тепловых потерь доменной печи на расход кокса</h4>
+            <div class="form row">
+                <div class="form-group col">
+                    <label asp-for="Influence.HeatLosses.heat" class="control-label">Экономия тепла при снижении тепловых потерь печи на 1 %</label>
+                    <input asp-for="Influence.HeatLosses.heat" class="form-control" readonly />
+                </div>
+                <div class="form-group col">
+                    <label asp-for="Influence.HeatLosses.coke" class="control-label">Экономия кокса при снижении тепловых потерь печи на 1 %</label>
+                    <input asp-for="Influence.HeatLosses.coke" class="form-control" readonly />
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Influence.Combined.value" class="control-label"></label>
-                <input asp-for="Influence.Combined.value" class="form-control" readonly />
-            </div>
-            <div class="form-group">
-                <label asp-for="Influence.Combined.economy" class="control-label"></label>
-                <input asp-for="Influence.Combined.economy" class="form-control" readonly />
-            </div>
-            <div class="form-group">
-                <label asp-for="Influence.Dampness.value" class="control-label"></label>
-                <input asp-for="Influence.Dampness.value" class="form-control" readonly />
-            </div>
-            <div class="form-group">
-                <label asp-for="Influence.Dampness.economy" class="control-label"></label>
-                <input asp-for="Influence.Dampness.economy" class="form-control" readonly />
-            </div>
-            <div class="form-group">
-                <label asp-for="Influence.SlagProduction.heat" class="control-label"></label>
-                <input asp-for="Influence.SlagProduction.heat" class="form-control" readonly />
-            </div>
-            <div class="form-group">
-                <label asp-for="Influence.SlagProduction.coke" class="control-label"></label>
-                <input asp-for="Influence.SlagProduction.coke" class="form-control" readonly />
-            </div>
-            <div class="form-group">
-                <label asp-for="Influence.HeatLosses.heat" class="control-label"></label>
-                <input asp-for="Influence.HeatLosses.heat" class="form-control" readonly />
-            </div>
-            <div class="form-group">
-                <label asp-for="Influence.HeatLosses.coke" class="control-label"></label>
-                <input asp-for="Influence.HeatLosses.coke" class="form-control" readonly />
-            </div>
-            <div class="form-group">
+            
+            @*<div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+            </div>*@
         </form>
     </div>
 </div>
