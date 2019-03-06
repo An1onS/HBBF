@@ -1,4 +1,5 @@
 ﻿using OfficeOpenXml;
+using System;
 using System.IO;
 
 namespace HBDP.Models
@@ -18,19 +19,19 @@ namespace HBDP.Models
 			{
 				var cells = package.Workbook.Worksheets["Тепловой баланс"].Cells;
 				for (var row = 4; row < 17; row++)
-					typeof(IncomeData).GetProperties()[row - 4].SetValue(Income, (double)cells[row, 3].Value);
+					typeof(IncomeData).GetProperties()[row - 4].SetValue(Income, Math.Round((double)cells[row, 3].Value,3));
 				for (var row = 19; row < 48; row++)
-					typeof(WithdrawalData).GetProperties()[row - 19].SetValue(Withdrawal, (double)cells[row, 3].Value);
-				Influence.Q = (double)cells[50, 3].Value;
-				Influence.QtoC = (double)cells[51, 3].Value;
-				Influence.CokeC = (double)cells[52, 3].Value;
-				Influence.Rd = ((double)cells[55,3].Value, (double)cells[56, 3].Value);
-				Influence.Limestone = ((double)cells[59, 3].Value, (double)cells[60, 3].Value, (double)cells[61, 3].Value);
-				Influence.AirBlasting = ((double)cells[64, 3].Value, (double)cells[65, 3].Value);
-				Influence.Combined = ((double)cells[68, 3].Value, (double)cells[69, 3].Value);
-				Influence.Dampness = ((double)cells[72, 3].Value, (double)cells[73, 3].Value);
-				Influence.SlagProduction = ((double)cells[76, 3].Value, (double)cells[77, 3].Value);
-				Influence.HeatLosses = ((double)cells[80, 3].Value, (double)cells[81, 3].Value);
+					typeof(WithdrawalData).GetProperties()[row - 19].SetValue(Withdrawal, Math.Round((double)cells[row, 3].Value,3));
+				Influence.Q = Math.Round((double)cells[50, 3].Value,3);
+				Influence.QtoC = Math.Round((double)cells[51, 3].Value,3);
+				Influence.CokeC = Math.Round((double)cells[52, 3].Value,3);
+				Influence.Rd = (Math.Round((double)cells[55,3].Value,3), Math.Round((double)cells[56, 3].Value,3));
+				Influence.Limestone = (Math.Round((double)cells[59, 3].Value,3), Math.Round((double)cells[60, 3].Value,3), Math.Round((double)cells[61, 3].Value,3));
+				Influence.AirBlasting = (Math.Round((double)cells[64, 3].Value,3), Math.Round((double)cells[65, 3].Value,3));
+				Influence.Combined = (Math.Round((double)cells[68, 3].Value,3), Math.Round((double)cells[69, 3].Value,3));
+				Influence.Dampness = (Math.Round((double)cells[72, 3].Value,3), Math.Round((double)cells[73, 3].Value,3));
+				Influence.SlagProduction = (Math.Round((double)cells[76, 3].Value,3), Math.Round((double)cells[77, 3].Value,3));
+				Influence.HeatLosses = (Math.Round((double)cells[80, 3].Value,3), Math.Round((double)cells[81, 3].Value,3));
 			}
 		}
 		/// <summary>
