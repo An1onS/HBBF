@@ -332,10 +332,13 @@
             <input type="submit" value="Create" class="btn btn-default" />
         </div>*@
 </form>
-<div class="container">
+<div class="container border rounded">
     <div class="row">
         <div class="col">
-            <div id="chartIncome"/>
+            <div id="chartIncome" />
+        </div>
+        <div class="col">
+            <div id="chartWi" />
         </div>
     </div>
 </div>
@@ -351,10 +354,20 @@
                 data = google.visualization.arrayToDataTable(jsonIncome, false);
                 var option = {
                     title: "Приход теплового баланса",
-                    width: 450,
-                    height: 400
+                    width: 1080,
+                    height:600
                 };
                 chart = new google.visualization.PieChart(document.getElementById('chartIncome'));
+                chart.draw(data, option);
+            })
+            $.get('JsonWi', function (jsonWi) {
+                data = google.visualization.arrayToDataTable(jsonWi, false);
+                var option = {
+                    title: "Расход теплового баланса",
+                    width: 1080,
+                    height: 600
+                };
+                chart = new google.visualization.PieChart(document.getElementById('chartWi'));
                 chart.draw(data, option);
             })
         }
