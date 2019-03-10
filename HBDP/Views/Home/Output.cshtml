@@ -351,8 +351,8 @@
                 data = google.visualization.arrayToDataTable(jsonIncome, false);
                 var option = {
                     title: "Приход теплового баланса",
-                    width: 800,
-                    height: 600
+                    width: 450,
+                    height: 400
                 };
                 chart = new google.visualization.PieChart(document.getElementById('chartIncome'));
                 chart.draw(data, option);
