@@ -14,16 +14,15 @@ namespace HBDP.Controllers
 	[Produces("application/json")]
 	public class HomeController : Controller
 	{
-		readonly IHostingEnvironment hostingEnvironment;
+		private const string fileName = "Тепловой баланс доменной печи.xlsx";
+		readonly string root;
 		public HomeController(IHostingEnvironment hostingEnvironment)
 		{
-			this.hostingEnvironment = hostingEnvironment;
+			root = hostingEnvironment.WebRootPath;
 		}
 
 		public IActionResult Index()
 		{
-			var root = hostingEnvironment.WebRootPath;
-			var fileName = "Тепловой баланс доменной печи.xlsx";
 			var fileinfo = new FileInfo(Path.Combine(root, fileName));
 			Input input = new Input(fileinfo);
 			return View(input);
@@ -32,12 +31,43 @@ namespace HBDP.Controllers
 
 		public IActionResult Output()
 		{
-			var root = hostingEnvironment.WebRootPath;
-			var fileName = "Тепловой баланс доменной печи.xlsx";
 			var fileinfo = new FileInfo(Path.Combine(root, fileName));
 			var output = new Output(fileinfo);
 			return View(output);
 		}
+		public JsonResult JsonIncome()
+		{
+			var fileinfo = new FileInfo(Path.Combine(root, fileName));
+			var output = new Output(fileinfo);
+			var income = new object[]
+			{
+				new object[]{ "Статья прихода","Процент" },
+				new object[]{ "Горение кокса",output.Income.CokeHeatPercent},
+				new object[]{ "Дутьё",output.Income.AirHeatPercent},
+				new object[]{ "Конверсия газа",output.Income.GasHeatPercent},
+				new object[]{ "Шлакообразование", output.Income.SlagHeatPercent}
+			};
+			return Json(income);
+		}
+		public JsonResult JsonWi()
+		{
+			var fileinfo = new FileInfo(Path.Combine(root, fileName));
+			var output = new Output(fileinfo).Withdrawal;
+			var withdrawal = new object[]
+			{
+				new object[]{ "Статья расхода","Процент" },
+				new object[]{ "Восстановление железа",output.FeReductionPercent},
+				new object[]{ "Тепловые потери",output.LossesPercent},
+				new object[]{ "Нагрев чугуна",output.PigIronHeatingPercent},
+				new object[]{ "Нагрев шлака", output.SlagHeatingPercent},
+				new object[]{ "Унос с колошниковым газом", output.TopGasPercent},
+				new object[]{ "Прочие", output.SumPercent-output.FeReductionPercent
+				-output.LossesPercent-output.PigIronHeatingPercent
+				-output.SlagHeatingPercent-output.TopGasPercent}
+			};
+			return Json(withdrawal);
+		}
+
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 		public IActionResult Error()
 		{

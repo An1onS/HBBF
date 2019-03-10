@@ -332,6 +332,44 @@
             <input type="submit" value="Create" class="btn btn-default" />
         </div>*@
 </form>
+<div class="container border rounded">
+    <div class="row">
+        <div class="col">
+            <div id="chartIncome" />
+        </div>
+        <div class="col">
+            <div id="chartWi" />
+        </div>
+    </div>
+</div>
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script>
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            $.get('JsonIncome', function (jsonIncome) {
+                data = google.visualization.arrayToDataTable(jsonIncome, false);
+                var option = {
+                    title: "Приход теплового баланса",
+                    width: 1080,
+                    height:600
+                };
+                chart = new google.visualization.PieChart(document.getElementById('chartIncome'));
+                chart.draw(data, option);
+            })
+            $.get('JsonWi', function (jsonWi) {
+                data = google.visualization.arrayToDataTable(jsonWi, false);
+                var option = {
+                    title: "Расход теплового баланса",
+                    width: 1080,
+                    height: 600
+                };
+                chart = new google.visualization.PieChart(document.getElementById('chartWi'));
+                chart.draw(data, option);
+            })
+        }
+    </script>
 }
