@@ -328,9 +328,9 @@
     <div>
         <a asp-action="Index">Изменить исходные данные</a>
     </div>
-    @*<div class="form-group">
-            <input type="submit" value="Create" class="btn btn-default" />
-        </div>*@
+    <div class="form-group">
+        <button asp-action="DownloadXLSX">Сохранить файл</button>
+    </div>
 </form>
 <div class="container border rounded">
     <div class="row">
@@ -355,7 +355,7 @@
                 var option = {
                     title: "Приход теплового баланса",
                     width: 1080,
-                    height:600
+                    height: 600
                 };
                 chart = new google.visualization.PieChart(document.getElementById('chartIncome'));
                 chart.draw(data, option);

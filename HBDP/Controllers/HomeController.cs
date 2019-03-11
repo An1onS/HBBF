@@ -35,6 +35,16 @@ namespace HBDP.Controllers
 			var output = new Output(fileinfo);
 			return View(output);
 		}
+		public IActionResult DownloadXLSX()
+		{
+			var ms = new MemoryStream();
+			using (var package = new ExcelPackage( new FileInfo(Path.Combine(root, fileName))))
+			{
+				package.SaveAs(ms);
+			}
+			return File(ms.ToArray(), "application/ooxml", "Тепловой баланс.xlsx");
+		}
+
 		public JsonResult JsonIncome()
 		{
 			var fileinfo = new FileInfo(Path.Combine(root, fileName));
@@ -49,6 +59,7 @@ namespace HBDP.Controllers
 			};
 			return Json(income);
 		}
+
 		public JsonResult JsonWi()
 		{
 			var fileinfo = new FileInfo(Path.Combine(root, fileName));
