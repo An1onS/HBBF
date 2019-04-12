@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Hosting;
 using HBDP.Models;
@@ -11,7 +7,7 @@ using System.IO;
 
 namespace HBDP.Controllers
 {
-	[Produces("application/json")]
+    [Produces("application/json")]
 	public class HomeController : Controller
 	{
 		private const string fileName = "Тепловой баланс доменной печи.xlsx";
