@@ -28,6 +28,10 @@ namespace HBDP.Models
 			IronOreMaterials = new IronOreMaterialsData();
 			LoadFromExcel(file);
 		}
+        /// <summary>
+        /// Чтение данных из Excel
+        /// </summary>
+        /// <param name="file"></param>
 		void LoadFromExcel(FileInfo file)
 		{
 			using (var package = new ExcelPackage(file))
@@ -51,6 +55,10 @@ namespace HBDP.Models
 					typeof(IronOreMaterialsData).GetProperties()[row - 48].SetValue(IronOreMaterials, (double)cells[row, 3].Value);
 			}
 		}
+        /// <summary>
+        /// Сохранение данных в Excel
+        /// </summary>
+        /// <param name="file"></param>
 		public void WriteToExcel(FileInfo file)
 		{
 			using (var package = new ExcelPackage(file))
@@ -70,6 +78,7 @@ namespace HBDP.Models
 					cells[row, 3].Value = typeof(TopGasData).GetProperties()[row - 42].GetValue(TopGas);
 				for (var row = 48; row < 51; row++)
 					typeof(IronOreMaterialsData).GetProperties()[row - 48].GetValue(IronOreMaterials);
+                // собственно, сохранение. Без этого using закрывает поток без изменений
                 package.Save();
 			}
 		}
