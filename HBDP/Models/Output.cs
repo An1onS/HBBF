@@ -17,6 +17,7 @@ namespace HBDP.Models
 		{
 			using (var package = new ExcelPackage(file))
 			{
+                package.Workbook.Calculate();
 				var cells = package.Workbook.Worksheets["Тепловой баланс"].Cells;
 				for (var row = 4; row < 17; row++)
 					typeof(IncomeData).GetProperties()[row - 4].SetValue(Income, Math.Round((double)cells[row, 3].Value,3));
