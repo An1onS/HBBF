@@ -5,7 +5,18 @@ namespace HBDP.Models
 {
 	public class Input
 	{
-		public Input(FileInfo file)
+        public Input()
+        {
+            Regime = new RegimeData();
+            PigIron = new PigIronData();
+            Coke = new CokeData();
+            AirBlasting = new AirBlastingData();
+            Limestone = new LimestoneData();
+            Slag = new SlagData();
+            TopGas = new TopGasData();
+            IronOreMaterials = new IronOreMaterialsData();
+        }
+        public Input(FileInfo file)
 		{
 			Regime = new RegimeData();
 			PigIron = new PigIronData();
@@ -59,6 +70,7 @@ namespace HBDP.Models
 					cells[row, 3].Value = typeof(TopGasData).GetProperties()[row - 42].GetValue(TopGas);
 				for (var row = 48; row < 51; row++)
 					typeof(IronOreMaterialsData).GetProperties()[row - 48].GetValue(IronOreMaterials);
+                package.Save();
 			}
 		}
 		public RegimeData Regime { set; get; }

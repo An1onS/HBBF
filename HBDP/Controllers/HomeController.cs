@@ -11,30 +11,29 @@ namespace HBDP.Controllers
 	public class HomeController : Controller
 	{
 		private const string fileName = "Тепловой баланс доменной печи.xlsx";
-		readonly string root;
+        FileInfo fileinfo;
 		public HomeController(IHostingEnvironment hostingEnvironment)
 		{
-			root = hostingEnvironment.WebRootPath;
+			var root = hostingEnvironment.WebRootPath;
+            fileinfo = new FileInfo(Path.Combine(root, fileName));
 		}
 
 		public IActionResult Index()
 		{
-			var fileinfo = new FileInfo(Path.Combine(root, fileName));
 			Input input = new Input(fileinfo);
 			return View(input);
 		}
-		
-
-		public IActionResult Output()
+        [HttpPost]
+		public IActionResult Output(Input input)
 		{
-			var fileinfo = new FileInfo(Path.Combine(root, fileName));
+            input.WriteToExcel(fileinfo);
 			var output = new Output(fileinfo);
 			return View(output);
 		}
 		public IActionResult DownloadXLSX()
 		{
 			var ms = new MemoryStream();
-			using (var package = new ExcelPackage( new FileInfo(Path.Combine(root, fileName))))
+			using (var package = new ExcelPackage(fileinfo))
 			{
 				package.SaveAs(ms);
 			}
@@ -43,7 +42,6 @@ namespace HBDP.Controllers
 
 		public JsonResult JsonIncome()
 		{
-			var fileinfo = new FileInfo(Path.Combine(root, fileName));
 			var output = new Output(fileinfo);
 			var income = new object[]
 			{
@@ -58,7 +56,6 @@ namespace HBDP.Controllers
 
 		public JsonResult JsonWi()
 		{
-			var fileinfo = new FileInfo(Path.Combine(root, fileName));
 			var output = new Output(fileinfo).Withdrawal;
 			var withdrawal = new object[]
 			{
