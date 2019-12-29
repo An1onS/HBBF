@@ -23,7 +23,7 @@ namespace HBDP.Models
 		/// <summary>
 		/// Чтение данных из Excel
 		/// </summary>
-		/// <param name="file"></param>
+		/// <param name="file">Путь к файлу c методикой расчёта</param>
 		void LoadFromExcel(FileInfo file)
 		{
 			using (var package = new ExcelPackage(file))
@@ -50,7 +50,7 @@ namespace HBDP.Models
 		/// <summary>
 		/// Сохранение данных в Excel
 		/// </summary>
-		/// <param name="file"></param>
+		/// <param name="file">Путь к файлу c методикой расчёта</param>
 		public void WriteToExcel(FileInfo file)
 		{
 			using (var package = new ExcelPackage(file))
@@ -74,13 +74,37 @@ namespace HBDP.Models
 				package.Save();
 			}
 		}
+		/// <summary>
+		/// Режим плавки
+		/// </summary>
 		public RegimeData Regime { set; get; }
+		/// <summary>
+		/// Чугун
+		/// </summary>
 		public MoltenIronData MoltenIron { set; get; }
+		/// <summary>
+		/// Кокс
+		/// </summary>
 		public CokeData Coke { set; get; }
+		/// <summary>
+		/// Дутье
+		/// </summary>
 		public AirBlastingData AirBlasting { set; get; }
+		/// <summary>
+		/// Известняк
+		/// </summary>
 		public LimestoneData Limestone { set; get; }
+		/// <summary>
+		/// Шлак
+		/// </summary>
 		public SlagData Slag { set; get; }
+		/// <summary>
+		/// Доменный газ
+		/// </summary>
 		public TopGasData TopGas { set; get; }
+		/// <summary>
+		/// Железнорудные материалы
+		/// </summary>
 		public IronOreMaterialsData IronOreMaterials { set; get; }
 	}
 }
