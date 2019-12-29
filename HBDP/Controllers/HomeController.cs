@@ -79,11 +79,11 @@ namespace HBDP.Controllers
 				new object[]{ "Статья расхода","Процент" },
 				new object[]{ "Восстановление железа",output.FeReductionPercent},
 				new object[]{ "Тепловые потери",output.LossesPercent},
-				new object[]{ "Нагрев чугуна",output.PigIronHeatingPercent},
+				new object[]{ "Нагрев чугуна",output.MoltenIronHeatingPercent},
 				new object[]{ "Нагрев шлака", output.SlagHeatingPercent},
 				new object[]{ "Унос с колошниковым газом", output.TopGasPercent},
 				new object[]{ "Прочие", output.SumPercent-output.FeReductionPercent
-				-output.LossesPercent-output.PigIronHeatingPercent
+				-output.LossesPercent-output.MoltenIronHeatingPercent
 				-output.SlagHeatingPercent-output.TopGasPercent}
 			};
 			return Json(withdrawal);

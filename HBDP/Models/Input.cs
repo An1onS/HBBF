@@ -8,7 +8,7 @@ namespace HBDP.Models
 		public Input()
 		{
 			Regime = new RegimeData();
-			PigIron = new PigIronData();
+			MoltenIron = new MoltenIronData();
 			Coke = new CokeData();
 			AirBlasting = new AirBlastingData();
 			Limestone = new LimestoneData();
@@ -31,7 +31,7 @@ namespace HBDP.Models
 				var cells = package.Workbook.Worksheets["Исходные данные"].Cells;
 				// Циклы по диапазонам ячеек в xlsx
 				for (var row = 5; row < 15; row++)
-					typeof(PigIronData).GetProperties()[row - 5].SetValue(PigIron, (double)cells[row, 3].Value);
+					typeof(MoltenIronData).GetProperties()[row - 5].SetValue(MoltenIron, (double)cells[row, 3].Value);
 				Regime.StraightReduction = (double)cells[16, 3].Value;
 				for (var row = 18; row < 23; row++)
 					typeof(CokeData).GetProperties()[row - 18].SetValue(Coke, (double)cells[row, 3].Value);
@@ -57,7 +57,7 @@ namespace HBDP.Models
 			{
 				var cells = package.Workbook.Worksheets["Исходные данные"].Cells;
 				for (var row = 5; row < 15; row++)
-					cells[row, 3].Value = typeof(PigIronData).GetProperties()[row - 5].GetValue(PigIron);
+					cells[row, 3].Value = typeof(MoltenIronData).GetProperties()[row - 5].GetValue(MoltenIron);
 				for (var row = 18; row < 23; row++)
 					cells[row, 3].Value = typeof(CokeData).GetProperties()[row - 18].GetValue(Coke);
 				for (var row = 24; row < 33; row++)
@@ -75,7 +75,7 @@ namespace HBDP.Models
 			}
 		}
 		public RegimeData Regime { set; get; }
-		public PigIronData PigIron { set; get; }
+		public MoltenIronData MoltenIron { set; get; }
 		public CokeData Coke { set; get; }
 		public AirBlastingData AirBlasting { set; get; }
 		public LimestoneData Limestone { set; get; }

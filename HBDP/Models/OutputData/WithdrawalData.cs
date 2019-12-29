@@ -25,8 +25,8 @@
 		/// <summary>
 		/// 5. Расход тепла на нагрев жидкого чугуна
 		/// </summary>
-		public double PigIronHeating { set; get; }
-		public double PigIronHeatingPercent { set; get; }
+		public double MoltenIronHeating { set; get; }
+		public double MoltenIronHeatingPercent { set; get; }
 		/// <summary>
 		/// 6. Расход тепла на нагрев жидкого шлака
 		/// </summary>

@@ -3,7 +3,7 @@
 	/// <summary>
 	/// Свойства Чугуна
 	/// </summary>
-	public class PigIronData
+	public class MoltenIronData
 	{
 		/// <summary>
 		/// % Si
