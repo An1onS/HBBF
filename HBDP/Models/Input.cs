@@ -5,18 +5,7 @@ namespace HBDP.Models
 {
 	public class Input
 	{
-        public Input()
-        {
-            Regime = new RegimeData();
-            PigIron = new PigIronData();
-            Coke = new CokeData();
-            AirBlasting = new AirBlastingData();
-            Limestone = new LimestoneData();
-            Slag = new SlagData();
-            TopGas = new TopGasData();
-            IronOreMaterials = new IronOreMaterialsData();
-        }
-        public Input(FileInfo file)
+		public Input()
 		{
 			Regime = new RegimeData();
 			PigIron = new PigIronData();
@@ -26,12 +15,15 @@ namespace HBDP.Models
 			Slag = new SlagData();
 			TopGas = new TopGasData();
 			IronOreMaterials = new IronOreMaterialsData();
+		}
+		public Input(FileInfo file) : this()
+		{
 			LoadFromExcel(file);
 		}
-        /// <summary>
-        /// Чтение данных из Excel
-        /// </summary>
-        /// <param name="file"></param>
+		/// <summary>
+		/// Чтение данных из Excel
+		/// </summary>
+		/// <param name="file"></param>
 		void LoadFromExcel(FileInfo file)
 		{
 			using (var package = new ExcelPackage(file))
@@ -49,22 +41,22 @@ namespace HBDP.Models
 					typeof(LimestoneData).GetProperties()[row - 34].SetValue(Limestone, (double)cells[row, 3].Value);
 				for (var row = 38; row < 41; row++)
 					typeof(SlagData).GetProperties()[row - 38].SetValue(Slag, (double)cells[row, 3].Value);
-				for (var row = 42; row <47; row++)
-					typeof(TopGasData).GetProperties()[row -42].SetValue(TopGas, (double)cells[row, 3].Value);
-				for (var row = 48; row <51; row++)
+				for (var row = 42; row < 47; row++)
+					typeof(TopGasData).GetProperties()[row - 42].SetValue(TopGas, (double)cells[row, 3].Value);
+				for (var row = 48; row < 51; row++)
 					typeof(IronOreMaterialsData).GetProperties()[row - 48].SetValue(IronOreMaterials, (double)cells[row, 3].Value);
 			}
 		}
-        /// <summary>
-        /// Сохранение данных в Excel
-        /// </summary>
-        /// <param name="file"></param>
+		/// <summary>
+		/// Сохранение данных в Excel
+		/// </summary>
+		/// <param name="file"></param>
 		public void WriteToExcel(FileInfo file)
 		{
 			using (var package = new ExcelPackage(file))
 			{
 				var cells = package.Workbook.Worksheets["Исходные данные"].Cells;
-				for (var row = 5; row < 15; row++)				
+				for (var row = 5; row < 15; row++)
 					cells[row, 3].Value = typeof(PigIronData).GetProperties()[row - 5].GetValue(PigIron);
 				for (var row = 18; row < 23; row++)
 					cells[row, 3].Value = typeof(CokeData).GetProperties()[row - 18].GetValue(Coke);
@@ -78,8 +70,8 @@ namespace HBDP.Models
 					cells[row, 3].Value = typeof(TopGasData).GetProperties()[row - 42].GetValue(TopGas);
 				for (var row = 48; row < 51; row++)
 					typeof(IronOreMaterialsData).GetProperties()[row - 48].GetValue(IronOreMaterials);
-                // собственно, сохранение. Без этого using закрывает поток без изменений
-                package.Save();
+				// собственно, сохранение. Без этого using закрывает поток без изменений
+				package.Save();
 			}
 		}
 		public RegimeData Regime { set; get; }
