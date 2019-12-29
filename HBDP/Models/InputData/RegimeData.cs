@@ -1,5 +1,9 @@
 ﻿namespace HBDP.Models
-{	public class RegimeData
+{
+	/// <summary>
+	/// Свойства режима плавки
+	/// </summary>
+	public class RegimeData
 	{
 		/// <summary>
 		/// Степень прямого восстановления железа
