@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HBBF", "HBBF\HBBF.csproj", "{8968BD6E-61C1-48D4-92DE-995F4DD5AF73}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8968BD6E-61C1-48D4-92DE-995F4DD5AF73}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8968BD6E-61C1-48D4-92DE-995F4DD5AF73}.Debug|x86.Build.0 = Debug|Any CPU
+		{8968BD6E-61C1-48D4-92DE-995F4DD5AF73}.Release|x86.ActiveCfg = Release|Any CPU
+		{8968BD6E-61C1-48D4-92DE-995F4DD5AF73}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {61110C4F-9B50-487D-95F1-B7627557C5CE}
+	EndGlobalSection
+EndGlobal

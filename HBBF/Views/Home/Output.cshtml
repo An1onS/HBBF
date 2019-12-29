@@ -1,0 +1,375 @@
+﻿@model HBBF.Models.Output
+@{
+    ViewData["Title"] = "Вывод";
+}
+
+<h2>Вывод</h2>
+<hr />
+<form asp-action="Output">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="container form-group border rounded">
+        <h3>Приходная часть теплового баланса</h3>
+        <h4>Теплоёмкость веществ при температуре дутья, кДж/(м^3*°С)</h4>
+        <div class="row">
+            <div class="form-group col-sm">
+                <label asp-for="Income.O2_HeatCapacity" class="control-label">Кислород</label>
+                <input asp-for="Income.O2_HeatCapacity" class="form-control" readonly />
+            </div>
+            <div class="form-group col-sm">
+                <label asp-for="Income.N2_HeatCapacity" class="control-label">Азот</label>
+                <input asp-for="Income.N2_HeatCapacity" class="form-control" readonly />
+            </div>
+            <div class="form-group col-sm">
+                <label asp-for="Income.H2O_HeatCapacity" class="control-label">Вода</label>
+                <input asp-for="Income.H2O_HeatCapacity" class="form-control" readonly />
+            </div>
+        </div>
+        <h4>Количество получаемого тепла, кДж/кг</h4>
+        <div class="row">
+            <div class="form-group col-sm">
+                <label asp-for="Income.CokeHeat" class="control-label">Горение углерода кокса</label>
+                <input asp-for="Income.CokeHeat" class="form-control" readonly />
+            </div>
+            <div class="form-group col-sm">
+                <label asp-for="Income.CokeHeatPercent" class="control-label">%</label>
+                <input asp-for="Income.CokeHeatPercent" class="form-control" readonly />
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm">
+                <label asp-for="Income.AirHeat" class="control-label">Дутьё</label>
+                <input asp-for="Income.AirHeat" class="form-control" readonly />
+            </div>
+            <div class="form-group col-sm">
+                <label asp-for="Income.AirHeatPercent" class="control-label">%</label>
+                <input asp-for="Income.AirHeatPercent" class="form-control" readonly />
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm">
+                <label asp-for="Income.GasHeat" class="control-label">Конверсия природного газа</label>
+                <input asp-for="Income.GasHeat" class="form-control" readonly />
+            </div>
+            <div class="form-group col-sm">
+                <label asp-for="Income.GasHeatPercent" class="control-label">%</label>
+                <input asp-for="Income.GasHeatPercent" class="form-control" readonly />
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm">
+                <label asp-for="Income.SlagHeat" class="control-label">Шлакообразование</label>
+                <input asp-for="Income.SlagHeat" class="form-control" readonly />
+            </div>
+            <div class="form-group col-sm">
+                <label asp-for="Income.SlagHeatPercent" class="control-label">%</label>
+                <input asp-for="Income.SlagHeatPercent" class="form-control" readonly />
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm">
+                <label asp-for="Income.Sum" class="control-label">Сумма</label>
+                <input asp-for="Income.Sum" class="form-control" readonly />
+            </div>
+            <div class="form-group col-sm">
+                <label asp-for="Income.SumPercent" class="control-label">%</label>
+                <input asp-for="Income.SumPercent" class="form-control" readonly />
+            </div>
+        </div>
+    </div>
+    <div class="container form-group border rounded">
+        <h3>Расходная часть теплового баланса</h3>
+        <h4>Теплоёмкость веществ при температуре колошникового газа, кДж/(м^3*К)</h4>
+        <div class="row">
+            <div class="form-group col-sm">
+                <label asp-for="Withdrawal.CO" class="control-label">CO</label>
+                <input asp-for="Withdrawal.CO" class="form-control" readonly />
+            </div>
+            <div class="form-group col-sm">
+                <label asp-for="Withdrawal.CO2" class="control-label">CO2</label>
+                <input asp-for="Withdrawal.CO2" class="form-control" readonly />
+            </div>
+            <div class="form-group col-sm">
+                <label asp-for="Withdrawal.H2" class="control-label">H2</label>
+                <input asp-for="Withdrawal.H2" class="form-control" readonly />
+            </div>
+            <div class="form-group col-sm">
+                <label asp-for="Withdrawal.H2O" class="control-label">H2O</label>
+                <input asp-for="Withdrawal.H2O" class="form-control" readonly />
+            </div>
+            <div class="form-group col-sm">
+                <label asp-for="Withdrawal.N2" class="control-label">N2</label>
+                <input asp-for="Withdrawal.N2" class="form-control" readonly />
+            </div>
+        </div>
+        <h4>Расход тепла, кДж/кг</h4>
+        <div class="row">
+            <div class="form-group col-md">
+                <label asp-for="Withdrawal.FeReduction" class="control-label">Прямое восстановление оксидов железа</label>
+                <input asp-for="Withdrawal.FeReduction" class="form-control" readonly />
+            </div>
+            <div class="form-group col-sm">
+                <label asp-for="Withdrawal.FeReductionPercent" class="control-label">%</label>
+                <input asp-for="Withdrawal.FeReductionPercent" class="form-control" readonly />
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md">
+                <label asp-for="Withdrawal.ResidualsReduction" class="control-label">Прямое восстановление примесей чугуна</label>
+                <input asp-for="Withdrawal.ResidualsReduction" class="form-control" readonly />
+            </div>
+            <div class="form-group col-sm">
+                <label asp-for="Withdrawal.ResidualsReductionPercent" class="control-label">%</label>
+                <input asp-for="Withdrawal.ResidualsReductionPercent" class="form-control" readonly />
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm">
+                <label asp-for="Withdrawal.Desulfuration" class="control-label">Процесс десульфурации чугуна</label>
+                <input asp-for="Withdrawal.Desulfuration" class="form-control" readonly />
+            </div>
+            <div class="form-group col-sm">
+                <label asp-for="Withdrawal.DesulfurationPercent" class="control-label">%</label>
+                <input asp-for="Withdrawal.DesulfurationPercent" class="form-control" readonly />
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md">
+                <label asp-for="Withdrawal.FeHydrogenicReduction" class="control-label">Восстановление оксидов железа водородом</label>
+                <input asp-for="Withdrawal.FeHydrogenicReduction" class="form-control" readonly />
+            </div>
+            <div class="form-group col-sm">
+                <label asp-for="Withdrawal.FeHydrogenicReductionPercent" class="control-label">%</label>
+                <input asp-for="Withdrawal.FeHydrogenicReductionPercent" class="form-control" readonly />
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm">
+                <label asp-for="Withdrawal.MoltenIronHeating" class="control-label">Нагрев жидкого чугуна</label>
+                <input asp-for="Withdrawal.MoltenIronHeating" class="form-control" readonly />
+            </div>
+            <div class="form-group col-sm">
+                <label asp-for="Withdrawal.MoltenIronHeatingPercent" class="control-label">%</label>
+                <input asp-for="Withdrawal.MoltenIronHeatingPercent" class="form-control" readonly />
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm">
+                <label asp-for="Withdrawal.SlagHeating" class="control-label">Нагрев жидкого шлака</label>
+                <input asp-for="Withdrawal.SlagHeating" class="form-control" readonly />
+            </div>
+            <div class="form-group col-sm">
+                <label asp-for="Withdrawal.SlagHeatingPercent" class="control-label">%</label>
+                <input asp-for="Withdrawal.SlagHeatingPercent" class="form-control" readonly />
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm">
+                <label asp-for="Withdrawal.AirDegrading" class="control-label">Разложение влаги дутья</label>
+                <input asp-for="Withdrawal.AirDegrading" class="form-control" readonly />
+            </div>
+            <div class="form-group col-sm">
+                <label asp-for="Withdrawal.AirDegradingPercent" class="control-label">%</label>
+                <input asp-for="Withdrawal.AirDegradingPercent" class="form-control" readonly />
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm">
+                <label asp-for="Withdrawal.LimestoneDegrading" class="control-label">Разложение известняка</label>
+                <input asp-for="Withdrawal.LimestoneDegrading" class="form-control" readonly />
+            </div>
+            <div class="form-group col-sm">
+                <label asp-for="Withdrawal.LimestoneDegradingPercent" class="control-label">%</label>
+                <input asp-for="Withdrawal.LimestoneDegradingPercent" class="form-control" readonly />
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm">
+                <label asp-for="Withdrawal.StockDegrading" class="control-label">Разложение влаги шихты</label>
+                <input asp-for="Withdrawal.StockDegrading" class="form-control" readonly />
+            </div>
+            <div class="form-group col-sm">
+                <label asp-for="Withdrawal.StockDegradingPercent" class="control-label">%</label>
+                <input asp-for="Withdrawal.StockDegradingPercent" class="form-control" readonly />
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md">
+                <label asp-for="Withdrawal.TopGas" class="control-label">Тепло, уносимое колошниковым газом</label>
+                <input asp-for="Withdrawal.TopGas" class="form-control" readonly />
+            </div>
+            <div class="form-group col-sm">
+                <label asp-for="Withdrawal.TopGasPercent" class="control-label">%</label>
+                <input asp-for="Withdrawal.TopGasPercent" class="form-control" readonly />
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm">
+                <label asp-for="Withdrawal.Losses" class="control-label">Тепловые потери</label>
+                <input asp-for="Withdrawal.Losses" class="form-control" readonly />
+            </div>
+            <div class="form-group col-sm">
+                <label asp-for="Withdrawal.LossesPercent" class="control-label">%</label>
+                <input asp-for="Withdrawal.LossesPercent" class="form-control" readonly />
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm">
+                <label asp-for="Withdrawal.Sum" class="control-label">Сумма</label>
+                <input asp-for="Withdrawal.Sum" class="form-control" readonly />
+            </div>
+            <div class="form-group col-sm">
+                <label asp-for="Withdrawal.SumPercent" class="control-label">%</label>
+                <input asp-for="Withdrawal.SumPercent" class="form-control" readonly />
+            </div>
+        </div>
+    </div>
+    <div class="container form-group border rounded">
+        <h3>Влияние факторов на тепловой баланс и расход кокса</h3>
+        <div class="row">
+            <div class="form-group col-lg">
+                <label asp-for="Influence.Q" class="control-label">Тепло дутья, горения кокса с учётом уносимого колошниковым газом, кДж/кг</label>
+                <input asp-for="Influence.Q" class="form-control" readonly />
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm">
+                <label asp-for="Influence.QtoC" class="control-label">Тепло к сгорающему углероду, кДж/кг</label>
+                <input asp-for="Influence.QtoC" class="form-control" readonly />
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm">
+                <label asp-for="Influence.CokeC" class="control-label">Содержание углерода в коксе, %</label>
+                <input asp-for="Influence.CokeC" class="form-control" readonly />
+            </div>
+        </div>
+        <h4>1.Влияние степени прямого восстановления</h4>
+        <div class="row">
+            <div class="form-group col-lg">
+                <label asp-for="Influence.Rd.value" class="control-label">Снижение расхода тепла, при уменьшении на 0.01, кДж/кг</label>
+                <input asp-for="Influence.Rd.value" class="form-control" readonly />
+            </div>
+            <div class="form-group col-sm">
+                <label asp-for="Influence.Rd.economy" class="control-label">Снижение расхода кокса, кг/т</label>
+                <input asp-for="Influence.Rd.economy" class="form-control" readonly />
+            </div>
+        </div>
+        <h4>2.Влияние уменьшения количества известняка на 10 кг</h4>
+        <div class="row">
+            <div class="form-group col-lg">
+                <label asp-for="Influence.Limestone.value" class="control-label">Снижение расхода тепла, кДж/кг</label>
+                <input asp-for="Influence.Limestone.value" class="form-control" readonly />
+            </div>
+            <div class="form-group col-sm">
+                <label asp-for="Influence.Limestone.coke" class="control-label">Cнижение расхода кокса, кг/т</label>
+                <input asp-for="Influence.Limestone.coke" class="form-control" readonly />
+            </div>
+            <div class="form-group col-md">
+                <label asp-for="Influence.Limestone.full" class="control-label">Экономия кокса без известняка, кг/т</label>
+                <input asp-for="Influence.Limestone.full" class="form-control" readonly />
+            </div>
+        </div>
+        <h4>3. Зависимость расхода кокса от повышения температуры дутья на 10 °C</h4>
+        <div class="row">
+            <div class="form-group col-sm">
+                <label asp-for="Influence.AirBlasting.value" class="control-label">Прирост тепла от дутья, кДж/кг</label>
+                <input asp-for="Influence.AirBlasting.value" class="form-control" readonly />
+            </div>
+            <div class="form-group col-sm">
+                <label asp-for="Influence.AirBlasting.economy" class="control-label">Экономия кокса, кг/т</label>
+                <input asp-for="Influence.AirBlasting.economy" class="form-control" readonly />
+            </div>
+        </div>
+        <h4>4. Зависимость расхода кокса от повышения расхода природного газа на 10 м3/т</h4>
+        <div class="row">
+            <div class="form-group col-md">
+                <label asp-for="Influence.Combined.value" class="control-label">Прирост тепла от природного газа, кДж/кг</label>
+                <input asp-for="Influence.Combined.value" class="form-control" readonly />
+            </div>
+            <div class="form-group col-sm">
+                <label asp-for="Influence.Combined.economy" class="control-label">Экономия кокса, кг/т</label>
+                <input asp-for="Influence.Combined.economy" class="form-control" readonly />
+            </div>
+        </div>
+        <h4>5. Зависимость расхода кокса от уменьшения влажности комбинированного дутья на 1 г/м3</h4>
+        <div class="row">
+            <div class="form-group col-lg">
+                <label asp-for="Influence.Dampness.value" class="control-label">Снижение расхода тепла на разложение влаги, кДж/кг</label>
+                <input asp-for="Influence.Dampness.value" class="form-control" readonly />
+            </div>
+            <div class="form-group col-sm">
+                <label asp-for="Influence.Dampness.economy" class="control-label">Экономия кокса, кг/т</label>
+                <input asp-for="Influence.Dampness.economy" class="form-control" readonly />
+            </div>
+        </div>
+        <h4>6.Влияние снижения выхода шлака на 10 кг</h4>
+        <div class="row">
+            <div class="form-group col-sm">
+                <label asp-for="Influence.SlagProduction.heat" class="control-label">Экономия тепла, кДж/кг</label>
+                <input asp-for="Influence.SlagProduction.heat" class="form-control" readonly />
+            </div>
+            <div class="form-group col-sm">
+                <label asp-for="Influence.SlagProduction.coke" class="control-label">Экономия кокса, кг/т</label>
+                <input asp-for="Influence.SlagProduction.coke" class="form-control" readonly />
+            </div>
+        </div>
+        <h4>7.Влияние снижения тепловых потерь доменной печи на 1 %</h4>
+        <div class="row">
+            <div class="form-group col-sm">
+                <label asp-for="Influence.HeatLosses.heat" class="control-label">Экономия тепла, кДж/кг</label>
+                <input asp-for="Influence.HeatLosses.heat" class="form-control" readonly />
+            </div>
+            <div class="form-group col-sm">
+                <label asp-for="Influence.HeatLosses.coke" class="control-label">Экономия кокса, кг/т</label>
+                <input asp-for="Influence.HeatLosses.coke" class="form-control" readonly />
+            </div>
+        </div>
+    </div>
+    <div>
+        <a asp-action="Index">Изменить исходные данные</a>
+    </div>
+    <div class="form-group">
+        <button asp-action="DownloadXLSX">Сохранить файл</button>
+    </div>
+</form>
+<div class="container border rounded">
+    <div class="row">
+        <div class="col">
+            <div id="chartIncome" />
+        </div>
+        <div class="col">
+            <div id="chartWi" />
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script>
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            $.get('JsonIncome', function (jsonIncome) {
+                data = google.visualization.arrayToDataTable(jsonIncome, false);
+                var option = {
+                    title: "Приход теплового баланса",
+                    width: 1080,
+                    height: 600
+                };
+                chart = new google.visualization.PieChart(document.getElementById('chartIncome'));
+                chart.draw(data, option);
+            })
+            $.get('JsonWi', function (jsonWi) {
+                data = google.visualization.arrayToDataTable(jsonWi, false);
+                var option = {
+                    title: "Расход теплового баланса",
+                    width: 1080,
+                    height: 600
+                };
+                chart = new google.visualization.PieChart(document.getElementById('chartWi'));
+                chart.draw(data, option);
+            })
+        }
+    </script>
+}
