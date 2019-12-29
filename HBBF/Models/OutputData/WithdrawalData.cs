@@ -1,7 +1,7 @@
 ﻿namespace HBBF.Models
 {
 	public class WithdrawalData
-	{		
+	{
 		/// <summary>
 		/// 1. Расход тепла на прямое восстановление оксидов железа
 		/// </summary>
