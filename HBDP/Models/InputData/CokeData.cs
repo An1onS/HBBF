@@ -1,25 +1,28 @@
 ﻿namespace HBDP.Models
 {
+	/// <summary>
+	/// Свойства кокса
+	/// </summary>
 	public class CokeData
 	{
 		/// <summary>
-		/// Удельный расход кокса
-		/// </summary>		
+		/// Удельный расход
+		/// </summary>
 		public double Consumption { set; get; }
 		/// <summary>
-		/// Зола кокса
+		/// Зола
 		/// </summary>
 		public double Ash { set; get; }
 		/// <summary>
-		/// Сера кокса
+		/// Сера
 		/// </summary>
 		public double Sulfur { set; get; }
 		/// <summary>
-		/// Летучие кокса
+		/// Летучие
 		/// </summary>
 		public double Volatiles { set; get; }
 		/// <summary>
-		/// Влага кокса
+		/// Влага
 		/// </summary>
 		public double Dampness { set; get; }
 	}
