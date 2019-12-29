@@ -1,0 +1,25 @@
+{
+  "defaultProvider": "cdnjs",
+  "version": "1.0",
+  "libraries": [
+    {
+      "destination": "wwwroot/lib/bootstrap/",
+      "library": "bootstrap@4.4.1",
+      "provider": "unpkg"
+    },
+    {
+      "destination": "wwwroot/lib/jquery/",
+      "library": "jquery@3.4.1",
+      "provider": "cdnjs"
+    },
+    {
+      "destination": "wwwroot/lib/jquery-validation/",
+      "library": "jquery-validation@1.19.1",
+      "provider": "jsdelivr"
+    },
+    {
+      "library": "jquery-validation-unobtrusive@3.2.11",
+      "destination": "wwwroot/lib/jquery-validation-unobtrusive/"
+    }
+  ]
+}
